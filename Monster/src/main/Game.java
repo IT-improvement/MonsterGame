@@ -1,4 +1,4 @@
-package monster;
+package main;
 
 public class Game {
 	public void run() {
