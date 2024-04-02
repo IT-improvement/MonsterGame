@@ -46,4 +46,8 @@ public abstract class User {
 		this.mp = mp;
 	}
 
+	public boolean isDead() {
+		return isDead;
+	}
+	
 }
