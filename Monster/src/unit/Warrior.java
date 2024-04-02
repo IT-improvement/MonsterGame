@@ -6,12 +6,16 @@ import interfaces.Skillable;
 public class Warrior extends User implements Skillable {
 
 	public Warrior(String name, int power, int hp, int mp) {
-		super("전사", 40, 200, 30);
+		super("전사", 30, 200, 30);
 	}
 
 	@Override
 	public int skill() {
-		return 0;
+		if (this.getMp() < 10) {
+			System.err.println("마나가 부족합니다.");
+			return 0;
+		}
+		return 40;
 	}
 
 }

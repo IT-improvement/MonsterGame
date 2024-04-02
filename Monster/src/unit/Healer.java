@@ -10,8 +10,16 @@ public class Healer extends User implements Healable {
 	}
 
 	@Override
-	public int heal() {
-		return 0;
+	public void heal(User user) {
+		if (this.getMp() < 10) {
+			System.err.println("마나가 부족합니다.");
+			return;
+		}
+		if (!user.isDead()) {
+			return;
+		}
+		user.setHp(20);
+		this.setMp(-10);
 	}
 
 }
