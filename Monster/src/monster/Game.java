@@ -1,8 +1,6 @@
 package monster;
 
-public class Monster {
-	
-	
+public class Game {
 	public void run() {
 		
 	}
