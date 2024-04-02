@@ -1,4 +1,6 @@
-package monster;
+package unit;
+
+import abstractClass.User;
 
 public class Warrior extends User {
 

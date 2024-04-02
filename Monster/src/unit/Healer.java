@@ -1,4 +1,7 @@
-package monster;
+package unit;
+
+import abstractClass.User;
+import interfaces.Healable;
 
 public class Healer extends User implements Healable {
 

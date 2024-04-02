@@ -1,4 +1,4 @@
-package monster;
+package interfaces;
 
 public interface Healable {
 	public int heal();

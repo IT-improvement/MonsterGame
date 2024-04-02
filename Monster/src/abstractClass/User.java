@@ -1,4 +1,4 @@
-package monster;
+package abstractClass;
 
 public abstract class User {
 	private String name;
