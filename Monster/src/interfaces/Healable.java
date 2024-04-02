@@ -1,5 +1,7 @@
 package interfaces;
 
+import abstractClass.User;
+
 public interface Healable {
-	public int heal();
+	public void heal(User user);
 }
