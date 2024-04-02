@@ -1,27 +1,13 @@
 package abstractClass;
 
-public abstract class User {
-	private String name;
-	private int power;
-	private int hp;
-	private int MAX_HP;
+public abstract class User extends Life {
+
 	private int mp;
 	private int MAX_MP;
-	private boolean isDead;
 
 	public User(String name, int power, int hp, int mp) {
-		this.name = name;
-		this.power = power;
-		MAX_HP = this.hp = hp;
+		super(name, power, hp);
 		MAX_MP = this.mp = mp;
-	}
-
-	public int getPower() {
-		return power;
-	}
-
-	public void setPower(int power) {
-		this.power = power;
 	}
 
 	public int getHp() {
@@ -29,13 +15,13 @@ public abstract class User {
 	}
 
 	public void setHp(int hp) {
-		this.hp += hp;
-		if (this.hp == 0) {
+		super.hp += hp;
+		if (this.hp <=0) {
 			System.out.println("사망");
-			isDead = true;
+			super.setDead(true);
 		}
-		if (this.hp > MAX_HP)
-			this.hp = MAX_HP;
+		if (super.hp > super.getMAX_HP())
+			super.hp = super.getMAX_HP();
 	}
 
 	public int getMp() {
@@ -46,8 +32,4 @@ public abstract class User {
 		this.mp = mp;
 	}
 
-	public boolean isDead() {
-		return isDead;
-	}
-	
 }
