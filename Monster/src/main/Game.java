@@ -27,10 +27,14 @@ public class Game {
 	private Map map;
 	private Monster monster;
 
+	private boolean isRun;
+	private boolean isFight;
+
 	public Game() {
 		user = new Begginer();
 		map = new Map1();
 		monster = null;
+		isRun = true;
 	}
 
 	// input String
@@ -59,29 +63,54 @@ public class Game {
 		System.out.println("2) 회원가입" + ANSI_RESET);
 	}
 
-	private void printMonster(Monster monster) {
+	private void printMonster() {
 		System.out.println(ANSI_BOLD + ANSI_RED + "몬스터 등장!!");
 		System.out.println(monster);
 	}
 
 	private void printBegginer() {
-		System.out.println("1) 평차치기");
+		System.out.println("1) 평타치기");
 		System.out.println("*) 도망가기");
 	}
 
 	private void printFristJob() {
 		System.out.println("1) 평타치기");
-		System.out.println("3) 스킬쓰기");
+		System.out.println("2) 스킬쓰기");
 		System.out.println("*) 도망가기");
 
 	}
 
+	private void printUserAttack() {
+		printStatusUser();
+		System.out.println(Game.ANSI_RED);
+		printStatusMonster();
+		System.out.println(Game.ANSI_RESET);
+	}
+
+	private void printMonsterAttack() {
+		System.out.println(monster.getMessage());
+		System.out.println(Game.ANSI_RED);
+		printStatusUser();
+		System.out.println(Game.ANSI_RESET);
+		printStatusMonster();
+	}
+
+	private void printStatusUser() {
+		System.out.println(user.getName() + ": [" + user.getHp() + "|" + user.getMAX_HP() + "]");
+	}
+
+	private void printStatusMonster() {
+		System.out.println(monster.getName() + ": [" + monster.getHp() + "|" + monster.getMAX_HP() + "]");
+	}
+
+	/* menu Method */
 	private void begginer(int sel) {
 		switch (sel) {
 		case 1:
 			bassicAttack();
 			break;
 		default:
+			isFight = false;
 			break;
 		}
 	}
@@ -95,6 +124,7 @@ public class Game {
 			firstSkill();
 			break;
 		default:
+			isFight = false;
 			break;
 		}
 	}
@@ -109,7 +139,7 @@ public class Game {
 	}
 
 	public void run() {
-		while (true) {
+		while (isRun) {
 			printStart();
 			System.out.println(map);
 			String dir = inputString(ANSI_RESET + "입력");
@@ -118,7 +148,7 @@ public class Game {
 			if (monster == null) {
 				continue;
 			}
-			fight(monster);
+			fight();
 		}
 	}
 
@@ -143,22 +173,48 @@ public class Game {
 	private Monster isFight() {
 		ArrayList<Monster> monsterList = map.getMonsterList();
 		for (Monster monster : monsterList) {
-			if (monster.getX() == user.getX() && monster.getY() == user.getY())
+			if (monster.getX() == user.getX() && monster.getY() == user.getY()) {
+				isFight = true;
 				return monster;
+			}
 		}
 		return null;
 	}
 
-	private void fight(Monster monster) {
-		printMonster(monster);
-		battle(monster);
+	private void fight() {
+		printMonster();
+		battle();
 	}
 
-	private void battle(Monster monster) {
-		while (!monster.isDead() && !user.isDead()) {
+	private void battle() {
+		while (isFight) {
 			userAttack();
+			if (monster.isDead()) {
+				deadMonster();
+				break;
+			}
 			monsterAttack();
+			printUserAttack();
+			if (user.isDead()) {
+				deadUser();
+				break;
+			}
+			printMonsterAttack();
 		}
+	}
+
+	private void deadMonster() {
+		user.setXp(monster.getXp());
+		System.err.println("몬스터 처치!!");
+		map.monsterList.remove(monster);
+		System.out.println(monster.getXp() + "경험치 획득!");
+		isFight = false;
+	}
+
+	private void deadUser() {
+		System.err.println("게임종료!!");
+		isFight = false;
+		isRun = false;
 	}
 
 	private void userAttack() {
