@@ -11,7 +11,7 @@ public class Map1 extends Map {
 	String mons[] = { "Golem", "Slime" };
 
 	public Map1() {
-		super(10, 10, Game.ANSI_GREEN + "슬라임과 골렘의 숲");
+		super(10, 10, Game.ANSI_GREEN +Game.ANSI_BOLD +"슬라임과 골렘의 숲");
 		setMonster();
 	}
 
