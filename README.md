@@ -115,7 +115,7 @@
   <br>게임시작 화면입니다.<br>
   왼쪽에는 현재 위치한 맵, 오른쪽에는 캐릭터 상테창이 출력됩니다
   </div><br>
-  <h3>게임 시작</h3>
+  <h3>몬스터 등장</h3>
   <img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/monster.png">
   <div align=left>
   <br>몬스터 등장 화면입니다.<br>
