@@ -27,8 +27,12 @@
         <h4>6.저장 기능</h4>
     게임 진행 상황을 저장하고 나중에 불러올 수 있는 기능을 제공합니다.
   </div>
+  <div align=left>
 <h2>Class Diagram</h2>
+  </div>
+  <div align=left>
 <h2>Flow Chart</h2>
+  </div>
   <h1>소개</h1>
   <h3>게임 시작</h3>
   <img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/map.png">
