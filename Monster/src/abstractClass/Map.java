@@ -1,8 +1,11 @@
 package abstractClass;
 
+import java.util.ArrayList;
+
 public abstract class Map {
 	private int height;
 	private int width;
+	public ArrayList<ArrayList<Integer>> map;
 
 	public Map(int height, int width) {
 		super();
