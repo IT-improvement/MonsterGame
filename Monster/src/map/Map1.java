@@ -2,6 +2,7 @@ package map;
 
 import abstractClass.Map;
 import abstractClass.Monster;
+import main.Game;
 import monster.Golem;
 
 public class Map1 extends Map {
@@ -10,7 +11,7 @@ public class Map1 extends Map {
 	String mons[] = { "Golem", "Slime" };
 
 	public Map1() {
-		super(10, 10);
+		super(10, 10, Game.ANSI_GREEN + "슬라임과 골렘의 숲");
 		setMonster();
 	}
 
@@ -35,7 +36,6 @@ public class Map1 extends Map {
 				continue;
 			}
 			int num = (int) (Math.random() * mons.length);
-			System.out.println(monsterList.size() + "번째) Y:" + y + " X: " + x);
 			try {
 				Class<?> clazz = Class.forName(path + mons[num]);
 
@@ -46,7 +46,6 @@ public class Map1 extends Map {
 				// Object obj = clazz.getDeclaredConstructor().newInstance(); //이건 기본생성자일때
 				Monster monster = (Monster) object;
 				monsterList.add(monster);
-				System.out.println(monsterList.size() + "번째) Y:" + monster.getY() + " X: " + monster.getX());
 
 			} catch (Exception e) {
 				e.printStackTrace();
