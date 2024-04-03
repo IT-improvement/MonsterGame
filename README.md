@@ -56,9 +56,15 @@
      ├── monster
      │     ├── Golem.java
      │     └── Silme.java
-     └── map
-           ├── SlimeAndGolemForest.java
-           └── Town.java
+     ├── map
+     │     ├── SlimeAndGolemForest.java
+     │     └── Town.java
+     │
+     └── file
+           ├── Golem.png
+           ├── Slime.png
+           ├── map.png
+           └── monster.png
 ```
 <br>
 
