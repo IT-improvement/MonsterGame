@@ -88,6 +88,12 @@
 </div>
 게임시작 화면입니다.<br>
 왼쪽에는 현재 위치한 맵, 오른쪽에는 캐릭터 상테창이 출력됩니다.<br>
+  
+### 맵 종류
+|마을|슬라임과 골렘의 숲|골렘의 숲|슬라임의 숲|
+|---|---|---|---|
+|키보드| W | A | S |
+
 
 ### 몬스터 등장
 <div align=center>
@@ -98,10 +104,10 @@
 
 ### 몬스터 종류
 <div align=center>
-<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/Slime.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/Golem.png"><br>
-
-슬라임&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;골렘
+  
+|슬라임|골렘|
+|---|---|
+|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/Slime.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/Golem.png">|
 </div>
 <div align=center>
 <h1>시연영상</h1>
