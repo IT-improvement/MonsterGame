@@ -16,7 +16,7 @@ public abstract class Life {
 		this.y = y;
 		MAX_HP = this.hp = hp;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
