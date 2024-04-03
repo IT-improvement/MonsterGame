@@ -27,7 +27,29 @@
         <h4>6.저장 기능</h4>
     게임 진행 상황을 저장하고 나중에 불러올 수 있는 기능을 제공합니다.
   </div>
-<h3>Class Diagram</h3>
-<h3>Flow Chart</h3>
+  <div align=left>
+<h2>Class Diagram</h2>
+  </div>
+  <div align=left>
+<h2>Flow Chart</h2>
+  </div>
+  <h1>소개</h1>
+  <h3>게임 시작</h3>
+  <img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/map.png">
+  <div align=left>
+  <br>게임시작 화면입니다.<br>
+  왼쪽에는 현재 위치한 맵, 오른쪽에는 캐릭터 상테창이 출력됩니다
+  </div><br>
+  <h3>게임 시작</h3>
+  <img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/monster.png">
+  <div align=left>
+  <br>몬스터 등장 화면입니다.<br>
+  몬스턴가 등장 후 몬스터 이름과 함께 사용자가 전투에서 선택할 수 있는 메뉴가 나옵니다.<br>
+  </div>
+    <h3>몬스터 종류</h3>
+  <img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/Slime.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/Golem.png"><br>
+    슬라임&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;골렘
+  </div>
 <h1>시연영상</h1>
 </div>
