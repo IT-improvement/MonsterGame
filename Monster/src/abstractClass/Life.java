@@ -6,12 +6,14 @@ public abstract class Life {
 	public int hp;
 	private int MAX_HP;
 	private boolean isDead;
-	public int x;
-	public int y;
+	private int x;
+	private int y;
 
-	public Life(String name, int power, int hp) {
+	public Life(String name, int power, int hp, int x, int y) {
 		this.name = name;
 		this.power = power;
+		this.x = x;
+		this.y = y;
 		MAX_HP = this.hp = hp;
 	}
 
@@ -33,6 +35,22 @@ public abstract class Life {
 
 	public int getMAX_HP() {
 		return MAX_HP;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
 	}
 
 }

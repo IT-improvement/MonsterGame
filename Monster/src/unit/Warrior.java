@@ -6,7 +6,7 @@ import interfaces.Skillable;
 public class Warrior extends User implements Skillable {
 
 	public Warrior() {
-		super("전사", 30, 200, 30);
+		super("전사", 30, 200, 30,0,0);
 	}
 
 	@Override

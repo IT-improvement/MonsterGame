@@ -6,7 +6,7 @@ import interfaces.Healable;
 public class Healer extends User implements Healable {
 
 	public Healer() {
-		super("힐러", 0, 70, 150);
+		super("힐러", 0, 70, 1500,0,0);
 	}
 
 	@Override
