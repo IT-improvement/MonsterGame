@@ -23,4 +23,9 @@ public class Slime extends Monster {
 		result+="\n"+Game.ANSI_RESET;
 		return result;
 	}
+
+	@Override
+	public String getMessage() {
+		return "몸통박치기!";
+	}
 }

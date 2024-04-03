@@ -21,4 +21,9 @@ public class Golem extends Monster {
 		result += Game.ANSI_RESET + "\n";
 		return result;
 	}
+
+	@Override
+	public String getMessage() {
+		return "손바닥 치기";
+	}
 }

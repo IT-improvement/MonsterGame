@@ -25,4 +25,6 @@ public abstract class Monster extends Life {
 		return xp;
 	}
 
+	public abstract String getMessage();
+
 }
