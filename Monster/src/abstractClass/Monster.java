@@ -2,8 +2,15 @@ package abstractClass;
 
 public abstract class Monster extends Life {
 
-	public Monster(String name, int power, int hp) {
+	private int xp;
+
+	public Monster(String name, int power, int hp, int xp) {
 		super(name, power, hp);
+		this.xp = xp;
+	}
+
+	public int getHp() {
+		return super.hp;
 	}
 
 	public void setHp(int hp) {
@@ -12,6 +19,10 @@ public abstract class Monster extends Life {
 			System.out.println("사망");
 			super.setDead(true);
 		}
+	}
+
+	public int getXp() {
+		return xp;
 	}
 
 }
