@@ -13,7 +13,8 @@ public class Map1 extends Map {
 		setMonster();
 	}
 
-	private void setMonster() {
+	@Override
+	public void setMonster() {
 		for (int i = 0; i < 3; i++) {
 			int x = (int) (Math.random() * super.getHeight());
 			int y = (int) (Math.random() * super.getWidth());
@@ -31,16 +32,5 @@ public class Map1 extends Map {
 			Golem golem = new Golem(y, x);
 			monsterList.add(golem);
 		}
-	}
-
-	@Override
-	public String toString() {
-		String result = "";
-		for (int i = 0; i < super.getWidth(); i++) {
-			for (int j = 0; j < super.getHeight(); j++) {
-
-			}
-		}
-		return result;
 	}
 }

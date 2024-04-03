@@ -29,5 +29,6 @@ public abstract class Map {
 	public void setWidth(int width) {
 		this.width = width;
 	}
+	public abstract void setMonster();
 
 }
