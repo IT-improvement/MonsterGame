@@ -4,8 +4,8 @@ public abstract class Monster extends Life {
 
 	private int xp;
 
-	public Monster(String name, int power, int hp, int xp) {
-		super(name, power, hp);
+	public Monster(String name, int power, int hp, int xp, int x, int y) {
+		super(name, power, hp, x, y);
 		this.xp = xp;
 	}
 
