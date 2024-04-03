@@ -7,8 +7,8 @@ public abstract class User extends Life {
 	private int xp;
 	private int level;
 
-	public User(String name, int power, int hp, int mp) {
-		super(name, power, hp);
+	public User(String name, int power, int hp, int mp, int x, int y) {
+		super(name, power, hp, x , y);
 		MAX_MP = this.mp = mp;
 		this.level = 1;
 	}
