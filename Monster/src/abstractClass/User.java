@@ -43,6 +43,7 @@ public abstract class User extends Life {
 		this.xp = xp;
 		if (this.xp >= 100) {
 			level++;
+			
 			this.xp -= 100;
 		}
 	}
