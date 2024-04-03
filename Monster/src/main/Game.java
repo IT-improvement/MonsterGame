@@ -1,8 +1,10 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import abstractClass.Map;
+import abstractClass.Monster;
 import abstractClass.User;
 import map.Map1;
 import unit.Begginer;
@@ -45,6 +47,10 @@ public class Game {
 			System.out.println(map);
 			String dir = inputString(ANSI_RESET + "입력");
 			move(dir);
+			if (isFight() == null) {
+				continue;
+			}
+			fight();
 		}
 	}
 
@@ -66,4 +72,16 @@ public class Game {
 		user.setY(tY);
 	}
 
+	private Monster isFight() {
+		ArrayList<Monster> monsterList = map.getMonsterList();
+		for (Monster monster : monsterList) {
+			if (monster.getX() == user.getX() && monster.getY() == user.getY())
+				return monster;
+		}
+		return null;
+	}
+
+	private void fight() {
+
+	}
 }
