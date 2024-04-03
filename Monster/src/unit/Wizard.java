@@ -5,7 +5,7 @@ import interfaces.Skillable;
 
 public class Wizard extends User implements Skillable{
 
-	public Wizard(String name, int power, int hp, int mp) {
+	public Wizard() {
 		super("마법사", 20, 100, 100);
 	}
 

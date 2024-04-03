@@ -4,10 +4,13 @@ public abstract class User extends Life {
 
 	private int mp;
 	private int MAX_MP;
+	private int xp;
+	private int level;
 
 	public User(String name, int power, int hp, int mp) {
 		super(name, power, hp);
 		MAX_MP = this.mp = mp;
+		this.level = 1;
 	}
 
 	public int getHp() {
@@ -16,7 +19,7 @@ public abstract class User extends Life {
 
 	public void setHp(int hp) {
 		super.hp += hp;
-		if (this.hp <=0) {
+		if (this.hp <= 0) {
 			System.out.println("사망");
 			super.setDead(true);
 		}
@@ -30,6 +33,22 @@ public abstract class User extends Life {
 
 	public void setMp(int mp) {
 		this.mp = mp;
+	}
+
+	public int getXp() {
+		return xp;
+	}
+
+	public void setXp(int xp) {
+		this.xp = xp;
+		if (this.xp >= 100) {
+			level++;
+			this.xp -= 100;
+		}
+	}
+
+	public int getLevel() {
+		return level;
 	}
 
 }

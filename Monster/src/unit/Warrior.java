@@ -5,7 +5,7 @@ import interfaces.Skillable;
 
 public class Warrior extends User implements Skillable {
 
-	public Warrior(String name, int power, int hp, int mp) {
+	public Warrior() {
 		super("전사", 30, 200, 30);
 	}
 
