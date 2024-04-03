@@ -17,6 +17,14 @@ public abstract class Map {
 		this.width = width;
 		monsterList = new ArrayList<>();
 	}
+	
+	public ArrayList<Monster> getMonsterList() {
+		return monsterList;
+	}
+
+	public void setMonsterList(ArrayList<Monster> monsterList) {
+		this.monsterList = monsterList;
+	}
 
 	public int getHeight() {
 		return height;
