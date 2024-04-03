@@ -5,12 +5,12 @@ import abstractClass.Monster;
 import main.Game;
 import monster.Golem;
 
-public class Map1 extends Map {
+public class MapSlimeAndGolemForest extends Map {
 
 	String path = "monster.";
 	String mons[] = { "Golem", "Slime" };
 
-	public Map1() {
+	public MapSlimeAndGolemForest() {
 		super(10, 10, Game.ANSI_GREEN +Game.ANSI_BOLD +"슬라임과 골렘의 숲");
 		setMonster();
 	}
