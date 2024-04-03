@@ -101,7 +101,10 @@ public abstract class Map {
 			} else if (i == 7) {
 				result += "\t" + Game.ANSI_PURPLE + "|";
 				result += "\t" + Game.ANSI_RESET + "경험치: " + Game.user.getXp();
-				result += "\t" + Game.ANSI_PURPLE + "\t\t|";
+				if (Game.user.getXp() / 10 != 0)
+					result += "\t" + Game.ANSI_PURPLE + "|";
+				else
+					result += "\t" + Game.ANSI_PURPLE + "\t\t|";
 			} else if (i == 8) {
 				result += "\t" + Game.ANSI_PURPLE + "=========================";
 			}
