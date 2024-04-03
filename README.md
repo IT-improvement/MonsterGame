@@ -29,5 +29,18 @@
   </div>
 <h3>Class Diagram</h3>
 <h3>Flow Chart</h3>
+  <h1>소개</h1>
+  <h3>게임 시작</h3>
+  <img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/map.png">
+  <div align=left>
+  게임시작 화면입니다.<br>
+  왼쪽에는 현재 위치한 맵, 오른쪽에는 캐릭터 상테창이 출력됩니다
+  </div>
+  <h3>게임 시작</h3>
+  <img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/map.png">
+  <div align=left>
+  게임시작 화면입니다.<br>
+  왼쪽에는 현재 위치한 맵, 오른쪽에는 캐릭터 상테창이 출력됩니다
+  </div>
 <h1>시연영상</h1>
 </div>
