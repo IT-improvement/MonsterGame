@@ -6,6 +6,8 @@ public abstract class Life {
 	public int hp;
 	private int MAX_HP;
 	private boolean isDead;
+	public int x;
+	public int y;
 
 	public Life(String name, int power, int hp) {
 		this.name = name;
