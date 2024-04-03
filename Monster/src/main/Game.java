@@ -112,14 +112,12 @@ public class Game {
 
 	}
 
-
 	private void printMonsterAttack() {
-		System.out.println(monster.getMessage());
+		System.out.println(ANSI_RED+ monster.getName() + ": " + monster.getMessage()+ANSI_RESET);
 		String result = "";
 		result += ANSI_RED + user.getName() + ": [" + user.getHp() + "|" + user.getMAX_HP() + "]" + Game.ANSI_RESET;
 		System.out.println(result);
 	}
-
 
 	private void printStatusMonster() {
 		System.out.println(monster.getName() + ": [" + monster.getHp() + "|" + monster.getMAX_HP() + "]");
@@ -207,7 +205,7 @@ public class Game {
 			if (!isFight)
 				break;
 			try {
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
