@@ -7,7 +7,7 @@ import abstractClass.Map;
 import abstractClass.Monster;
 import abstractClass.User;
 import interfaces.Skillable;
-import map.MapSlimeAndGolemForest;
+import map.SlimeAndGolemForest;
 import monster.Golem;
 import unit.Begginer;
 
@@ -46,7 +46,7 @@ public class Game {
 
 	public Game() {
 		user = new Begginer();
-		map = new MapSlimeAndGolemForest();
+		map = new SlimeAndGolemForest();
 		monster = null;
 		isRun = true;
 	}
