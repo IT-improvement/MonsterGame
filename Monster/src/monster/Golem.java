@@ -1,6 +1,7 @@
 package monster;
 
 import abstractClass.Monster;
+import main.Game;
 
 public class Golem extends Monster {
 
@@ -8,4 +9,16 @@ public class Golem extends Monster {
 		super("골렘", 5, 30, 20, x, y);
 	}
 
+	@Override
+	public String toString() {
+		String result = "";
+		result += Game.ANSI_GRAY + "\n  ________  ";
+		result += "\n /  o  o  \\ ";
+		result += "\n|    _     |";
+		result += "\n|  /   \\  |";
+		result += "\n|  \\___/  |";
+		result += "\n \\________/";
+		result += Game.ANSI_RESET + "\n";
+		return result;
+	}
 }
