@@ -92,7 +92,7 @@
 ### 맵 종류
 |마을|슬라임과 골렘의 숲|골렘의 숲|슬라임의 숲|
 |---|---|---|---|
-|키보드| W | A | S |
+||<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/SlimeandGolemForest.png"> | | |
 
 
 ### 몬스터 등장
