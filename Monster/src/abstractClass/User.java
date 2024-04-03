@@ -8,7 +8,7 @@ public abstract class User extends Life {
 	private int level;
 
 	public User(String name, int power, int hp, int mp, int x, int y) {
-		super(name, power, hp, x , y);
+		super(name, power, hp, x, y);
 		MAX_MP = this.mp = mp;
 		this.level = 1;
 	}
@@ -43,7 +43,6 @@ public abstract class User extends Life {
 		this.xp = xp;
 		if (this.xp >= 100) {
 			level++;
-			
 			this.xp -= 100;
 		}
 	}
@@ -52,4 +51,5 @@ public abstract class User extends Life {
 		return level;
 	}
 
+	public abstract int skill();
 }
