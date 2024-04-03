@@ -6,13 +6,13 @@ import main.Game;
 public class Golem extends Monster {
 
 	public Golem(int x, int y) {
-		super("골렘", 5, 30, 20, x, y);
+		super("골렘", 5, 30, 50, x, y);
 	}
 
 	@Override
 	public String toString() {
 		String result = "";
-		result += Game.ANSI_GRAY + "\n  ________  ";
+		result += Game.ANSI_CYAN +Game.ANSI_BOLD+ "\n  ________  ";
 		result += "\n /  o  o  \\ ";
 		result += "\n|    _     |";
 		result += "\n|  /   \\  |";

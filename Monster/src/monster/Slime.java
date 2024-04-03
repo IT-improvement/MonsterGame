@@ -6,14 +6,14 @@ import main.Game;
 public class Slime extends Monster {
 
 	public Slime(int x, int y) {
-		super("슬라임", 20, 20, 10, x, y);
+		super("슬라임", 20, 20, 50, x, y);
 
 	}
 
 	@Override
 	public String toString() {
 		String result = "";
-		result += Game.ANSI_GREEN + "   /\\  ___  /\\";
+		result += Game.ANSI_GREEN +Game.ANSI_BOLD+ "   /\\  ___  /\\";
 		result += "\n   )O  \\/  O(";
 		result += "\n  / \\      / \\";
 		result += "\n / /'\\____/`\\ \\";
