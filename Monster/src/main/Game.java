@@ -56,6 +56,21 @@ public class Game {
 		return num;
 	}
 
+	public void run() {
+		while (isRun) {
+			printStatusUser();
+			printStart();
+			System.out.println(map);
+			String dir = inputString(ANSI_RESET + "입력");
+			move(dir);
+			monster = isFight();
+			if (monster == null) {
+				continue;
+			}
+			fight();
+		}
+	}
+
 	/* print */
 	private void printStart() {
 		System.out.println(ANSI_CYAN + ANSI_BOLD + "===== 메뉴 선택 =====");
@@ -138,20 +153,6 @@ public class Game {
 		monster.setHp(-damage);
 	}
 
-	public void run() {
-		while (isRun) {
-			printStart();
-			System.out.println(map);
-			String dir = inputString(ANSI_RESET + "입력");
-			move(dir);
-			monster = isFight();
-			if (monster == null) {
-				continue;
-			}
-			fight();
-		}
-	}
-
 	private void move(String dir) {
 		int tX = user.getX();
 		int tY = user.getY();
@@ -187,18 +188,21 @@ public class Game {
 	}
 
 	private void battle() {
-		while (isFight) {
+		while (true) {
 			userAttack();
 			if (monster.isDead()) {
 				deadMonster();
-				break;
 			}
-			monsterAttack();
+			if (!isFight)
+				break;
+
 			printUserAttack();
+			monsterAttack();
 			if (user.isDead()) {
 				deadUser();
-				break;
 			}
+			if (!isFight)
+				break;
 			printMonsterAttack();
 		}
 	}
