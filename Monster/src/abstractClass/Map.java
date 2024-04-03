@@ -3,6 +3,8 @@ package abstractClass;
 import java.util.ArrayList;
 
 import main.Game;
+import monster.Golem;
+import monster.Slime;
 
 public abstract class Map {
 	private int height;
@@ -47,7 +49,10 @@ public abstract class Map {
 							result += Game.ANSI_RED + "🔫‍ ";
 						} else {
 							isCheck = true;
-							result += Game.ANSI_GREEN + "🌳 ";
+							if (monster instanceof Golem) {
+								result += Game.ANSI_GRAY + "🌳 ";
+							} else if (monster instanceof Slime)
+								result += Game.ANSI_GREEN + "🌳 ";
 						}
 					}
 				}
