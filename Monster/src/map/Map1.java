@@ -35,16 +35,19 @@ public class Map1 extends Map {
 				continue;
 			}
 			int num = (int) (Math.random() * mons.length);
+			System.out.println(monsterList.size() + "번째) Y:" + y + " X: " + x);
 			try {
 				Class<?> clazz = Class.forName(path + mons[num]);
 
 				// 이건 오버로드된 생성자일때
 				Class<?>[] params = { int.class, int.class };
-				Object object = clazz.getDeclaredConstructor(params).newInstance(y, x);
+				Object object = clazz.getDeclaredConstructor(params).newInstance(x, y);
 
 				// Object obj = clazz.getDeclaredConstructor().newInstance(); //이건 기본생성자일때
 				Monster monster = (Monster) object;
 				monsterList.add(monster);
+				System.out.println(monsterList.size() + "번째) Y:" + monster.getY() + " X: " + monster.getX());
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
