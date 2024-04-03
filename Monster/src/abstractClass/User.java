@@ -1,6 +1,6 @@
 package abstractClass;
 
-import main.Game;
+import main.FontStyle;
 
 public abstract class User extends Life {
 
@@ -50,7 +50,7 @@ public abstract class User extends Life {
 		if (this.xp >= 100) {
 			level++;
 			String message = "레벨 " + level + "에 도달했습니다! 축하합니다!";
-			System.out.println(Game.ANSI_YELLOW+Game.ANSI_BOLD+message+Game.ANSI_RESET);
+			System.out.println(FontStyle.ANSI_YELLOW + FontStyle.ANSI_BOLD + message + FontStyle.ANSI_RESET);
 			this.xp -= 100;
 		}
 	}

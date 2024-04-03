@@ -1,7 +1,7 @@
 package monster;
 
 import abstractClass.Monster;
-import main.Game;
+import main.FontStyle;
 
 public class Golem extends Monster {
 
@@ -12,13 +12,13 @@ public class Golem extends Monster {
 	@Override
 	public String toString() {
 		String result = "";
-		result += Game.ANSI_CYAN +Game.ANSI_BOLD+ "\n  ________  ";
+		result += FontStyle.ANSI_CYAN +FontStyle.ANSI_BOLD+ "\n  ________  ";
 		result += "\n /  o  o  \\ ";
 		result += "\n|    _     |";
 		result += "\n|  /   \\  |";
 		result += "\n|  \\___/  |";
 		result += "\n \\________/";
-		result += Game.ANSI_RESET + "\n";
+		result += FontStyle.ANSI_RESET + "\n";
 		return result;
 	}
 

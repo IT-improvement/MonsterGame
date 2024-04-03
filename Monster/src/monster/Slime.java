@@ -1,7 +1,7 @@
 package monster;
 
 import abstractClass.Monster;
-import main.Game;
+import main.FontStyle;
 
 public class Slime extends Monster {
 
@@ -13,14 +13,14 @@ public class Slime extends Monster {
 	@Override
 	public String toString() {
 		String result = "";
-		result += Game.ANSI_GREEN +Game.ANSI_BOLD+ "   /\\  ___  /\\";
+		result += FontStyle.ANSI_GREEN +FontStyle.ANSI_BOLD+ "   /\\  ___  /\\";
 		result += "\n   )O  \\/  O(";
 		result += "\n  / \\      / \\";
 		result += "\n / /'\\____/`\\ \\";
 		result += "\n( (   /  \\   ) )";
 		result += "\n \\ \\_/____\\_/ /";
 		result += "\n  \\_/      \\_/";
-		result+="\n"+Game.ANSI_RESET;
+		result+="\n"+FontStyle.ANSI_RESET;
 		return result;
 	}
 

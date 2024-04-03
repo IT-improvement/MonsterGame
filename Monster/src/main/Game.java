@@ -12,28 +12,6 @@ import monster.Golem;
 import unit.Begginer;
 
 public class Game {
-	public static final String ANSI_RESET = "\u001B[0m";
-	public static final String ANSI_BOLD = "\u001B[1m";
-	public static final String ANSI_CYAN = "\u001B[36m";
-	public static final String ANSI_YELLOW = "\u001B[33m";
-	public static final String ANSI_GREEN = "\u001B[32m";
-	public static final String ANSI_RED = "\u001B[31m";
-	public static final String ANSI_BROWN = "\u001B[33m";
-	public static final String ANSI_GRAY = "\u001B[90m";
-	public static final String ANSI_PURPLE = "\u001B[35m";
-	public static final String ANSI_BLACK = "\u001B[30m"; // 검정색
-	public static final String ANSI_BLUE = "\u001B[34m"; // 파란색
-	public static final String ANSI_WHITE = "\u001B[37m"; // 흰색
-
-	public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m"; // 검정색 배경
-	public static final String ANSI_RED_BACKGROUND = "\u001B[41m"; // 빨간색 배경
-	public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m"; // 녹색 배경
-	public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m"; // 노란색 배경
-	public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m"; // 파란색 배경
-	public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m"; // 자주색 배경
-	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m"; // 시안색 배경
-	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m"; // 흰색 배경
-	public static final String ANSI_PURPLE_BACKGROUND_LIGHT = "\u001B[45;1m"; // 자주색 배경
 
 	private Scanner scan = new Scanner(System.in);
 
@@ -73,9 +51,9 @@ public class Game {
 	public void run() {
 		while (isRun) {
 			// printStart();
-			System.out.println(map.getName() + ANSI_RESET);
+			System.out.println(map.getName() + FontStyle.ANSI_RESET);
 			System.out.println(map);
-			String dir = inputString(ANSI_RESET + "입력");
+			String dir = inputString(FontStyle.ANSI_RESET + "입력");
 			move(dir);
 			monster = isFight();
 			if (monster == null) {
@@ -87,9 +65,9 @@ public class Game {
 
 	/* print */
 	private void printStart() {
-		System.out.println(ANSI_CYAN + ANSI_BOLD + "===== 메뉴 선택 =====");
-		System.out.println(ANSI_RESET + ANSI_CYAN + "1) 로그인");
-		System.out.println("2) 회원가입" + ANSI_RESET);
+		System.out.println(FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "===== 메뉴 선택 =====");
+		System.out.println(FontStyle.ANSI_RESET + FontStyle.ANSI_CYAN + "1) 로그인");
+		System.out.println("2) 회원가입" + FontStyle.ANSI_RESET);
 	}
 
 	private void printMonster() {
@@ -113,9 +91,9 @@ public class Game {
 	}
 
 	private void printMonsterAttack() {
-		System.out.println(ANSI_RED+ monster.getName() + ": " + monster.getMessage()+ANSI_RESET);
+		System.out.println(FontStyle.ANSI_RED + monster.getName() + ": " + monster.getMessage() + FontStyle.ANSI_RESET);
 		String result = "";
-		result += ANSI_RED + user.getName() + ": [" + user.getHp() + "|" + user.getMAX_HP() + "]" + Game.ANSI_RESET;
+		result += FontStyle.ANSI_RED + user.getName() + ": [" + user.getHp() + "|" + user.getMAX_HP() + "]" + FontStyle.ANSI_RESET;
 		System.out.println(result);
 	}
 
@@ -190,7 +168,7 @@ public class Game {
 	}
 
 	private void fight() {
-		System.out.println(ANSI_BOLD + ANSI_RED + "몬스터 등장!!");
+		System.out.println(FontStyle.ANSI_BOLD + FontStyle.ANSI_RED + "몬스터 등장!!");
 		battle();
 	}
 

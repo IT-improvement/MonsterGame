@@ -2,8 +2,7 @@ package map;
 
 import abstractClass.Map;
 import abstractClass.Monster;
-import main.Game;
-import monster.Golem;
+import main.FontStyle;
 
 public class SlimeAndGolemForest extends Map {
 
@@ -11,7 +10,7 @@ public class SlimeAndGolemForest extends Map {
 	String mons[] = { "Golem", "Slime" };
 
 	public SlimeAndGolemForest() {
-		super(10, 10, Game.ANSI_GREEN +Game.ANSI_BOLD +"슬라임과 골렘의 숲");
+		super(10, 10, FontStyle.ANSI_GREEN +FontStyle.ANSI_BOLD +"슬라임과 골렘의 숲");
 		setMonster();
 	}
 
