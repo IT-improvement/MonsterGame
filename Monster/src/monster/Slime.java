@@ -20,7 +20,7 @@ public class Slime extends Monster {
 		result += "\n( (   /  \\   ) )";
 		result += "\n \\ \\_/____\\_/ /";
 		result += "\n  \\_/      \\_/";
-		result+="\n";
+		result+="\n"+Game.ANSI_RESET;
 		return result;
 	}
 }
