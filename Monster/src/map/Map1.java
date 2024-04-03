@@ -19,6 +19,10 @@ public class Map1 extends Map {
 		for (int i = 0; i < 3; i++) {
 			int x = (int) (Math.random() * super.getHeight());
 			int y = (int) (Math.random() * super.getWidth());
+			if (y == 0 && (x == 0 || x == 1)) {
+				i--;
+				continue;
+			}
 			boolean isCheck = false;
 			for (Monster golems : monsterList) {
 				if (golems.getX() == x && golems.getY() == y) {
@@ -34,7 +38,7 @@ public class Map1 extends Map {
 			try {
 				Class<?> clazz = Class.forName(path + mons[num]);
 
-				//이건 오버로드된 생성자일때
+				// 이건 오버로드된 생성자일때
 				Class<?>[] params = { int.class, int.class };
 				Object object = clazz.getDeclaredConstructor(params).newInstance(y, x);
 
