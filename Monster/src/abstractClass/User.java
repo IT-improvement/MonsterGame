@@ -31,6 +31,10 @@ public abstract class User extends Life {
 		return mp;
 	}
 
+	public int getMAX_MP() {
+		return MAX_MP;
+	}
+
 	public void setMp(int mp) {
 		this.mp = mp;
 	}
@@ -40,7 +44,7 @@ public abstract class User extends Life {
 	}
 
 	public void setXp(int xp) {
-		this.xp = xp;
+		this.xp += xp;
 		if (this.xp >= 100) {
 			level++;
 			this.xp -= 100;
