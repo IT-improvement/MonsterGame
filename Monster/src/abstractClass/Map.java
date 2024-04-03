@@ -17,7 +17,7 @@ public abstract class Map {
 		this.width = width;
 		monsterList = new ArrayList<>();
 	}
-	
+
 	public ArrayList<Monster> getMonsterList() {
 		return monsterList;
 	}
@@ -57,10 +57,7 @@ public abstract class Map {
 							result += Game.ANSI_RED + "🔫‍ ";
 						} else {
 							isCheck = true;
-							if (monster instanceof Golem) {
-								result += Game.ANSI_GRAY + "🌳 ";
-							} else if (monster instanceof Slime)
-								result += Game.ANSI_GREEN + "🌳 ";
+							result += Game.ANSI_GREEN + "🌳 ";
 						}
 					}
 				}
