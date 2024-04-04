@@ -1,7 +1,10 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
 
 import abstractClass.Map;
 import abstractClass.Monster;
@@ -92,7 +95,8 @@ public class Game {
 	private void printMonsterAttack() {
 		System.out.println(FontStyle.ANSI_RED + monster.getName() + ": " + monster.getMessage() + FontStyle.ANSI_RESET);
 		String result = "";
-		result += FontStyle.ANSI_RED + user.getName() + ": [" + user.getHp() + "|" + user.getMAX_HP() + "]" + FontStyle.ANSI_RESET;
+		result += FontStyle.ANSI_RED + user.getName() + ": [" + user.getHp() + "|" + user.getMAX_HP() + "]"
+				+ FontStyle.ANSI_RESET;
 		System.out.println(result);
 	}
 
@@ -148,11 +152,48 @@ public class Game {
 			tY++;
 		else if (dir.equals("w"))
 			tY--;
-		if (tX < 0 || tX >= 10 || tY < 0 || tY >= 10) {
-			return;
+		if (map instanceof Town) {
+			if (tX < 0 || tX >= 11 || tY < 0 || tY >= 2) {
+				return;
+			}
+		} else {
+			if (tX < 0 || tX >= 10 || tY < 0 || tY >= 10) {
+				return;
+			}
+		}
+		if (checkMap()) {
+			String npc = checkNpc(tX, tY);
+			if (npc != null) {
+				System.out.println(npc);
+				meetNpc(npc);
+				return;
+			}
 		}
 		user.setX(tX);
 		user.setY(tY);
+	}
+
+	private void meetNpc(String npc) {
+	}
+
+	private boolean checkMap() {
+		if (map instanceof Town)
+			return true;
+		return false;
+	}
+
+	private String checkNpc(int x, int y) {
+		Town town = new Town();
+		HashMap<String, Integer[]> npcList = town.getNpcList();
+		Iterator<String> keys = npcList.keySet().iterator();
+		while (keys.hasNext()) {
+			String key = keys.next();
+			Integer position[] = npcList.get(key);
+			if (position[0] == y && position[1] == x) {
+				return key;
+			}
+		}
+		return null;
 	}
 
 	private Monster isFight() {
@@ -184,7 +225,6 @@ public class Game {
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {
-				// TODO: handle exception
 			}
 			monsterAttack();
 			printMonsterAttack();
