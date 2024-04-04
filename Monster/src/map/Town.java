@@ -15,7 +15,7 @@ public class Town extends Map {
 	private HashMap<String, Integer[]> npcList;
 
 	public Town() {
-		super(2, 11, FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "마을");
+		super(10, 11, FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "마을");
 		npcList = new HashMap<>();
 		addNpc();
 	}
@@ -31,7 +31,7 @@ public class Town extends Map {
 	public String getFILE() {
 		return FILE;
 	}
-	
+
 	public HashMap<String, Integer[]> getNpcList() {
 		return npcList;
 	}
@@ -44,7 +44,7 @@ public class Town extends Map {
 		temp = new Integer[] { 0, 7 };
 		npcList.put(FILE, temp);
 	}
-	
+
 	@Override
 	public void setMonster() {
 		monsterList = null;
@@ -70,10 +70,14 @@ public class Town extends Map {
 					}
 				}
 				if (!isCheck) {
-					if (Game.user.getX() == j && Game.user.getY() == i)
-						result += FontStyle.ANSI_RESET + "🧍‍♂️";
-					else
-						result += FontStyle.ANSI_CYAN + "🟫";
+					if (i == 0 || i == 1) {
+						if (Game.user.getX() == j && Game.user.getY() == i)
+							result += FontStyle.ANSI_RESET + "🧍‍♂️";
+						else
+							result += FontStyle.ANSI_CYAN + "🟫";
+					}else {
+						result += FontStyle.ANSI_WHITE + "🟫";
+					}
 				}
 			}
 			if (i == 0) {
@@ -83,29 +87,37 @@ public class Town extends Map {
 				result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.user.getName();
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			}
+
+			if (i == 2) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "=========================";
+			} else if (i == 3) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.user.getName();
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+			} else if (i == 4) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				result += "\t" + FontStyle.ANSI_RESET + "체력: " + Game.user.getHp() + "/" + Game.user.getMAX_HP();
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+			} else if (i == 5) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.user.getMp() + "/" + Game.user.getMAX_MP();
+				result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
+			} else if (i == 6) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				result += "\t" + FontStyle.ANSI_RESET + "레벨: " + Game.user.getLevel();
+				result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
+			} else if (i == 7) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				result += "\t" + FontStyle.ANSI_RESET + "경험치: " + Game.user.getXp();
+				if (Game.user.getXp() / 10 != 0)
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				else
+					result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
+			} else if (i == 8) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "=========================";
+			}
 			result += "\n";
 		}
-		result += "                    ";
-		result += "\t" + FontStyle.ANSI_PURPLE + "|";
-		result += "\t" + FontStyle.ANSI_RESET + "체력: " + Game.user.getHp() + "/" + Game.user.getMAX_HP();
-		result += "\t" + FontStyle.ANSI_PURPLE + "|";
-		result += "\n                    ";
-		result += "\t" + FontStyle.ANSI_PURPLE + "|";
-		result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.user.getMp() + "/" + Game.user.getMAX_MP();
-		result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
-		result += "\n                    ";
-		result += "\t" + FontStyle.ANSI_PURPLE + "|";
-		result += "\t" + FontStyle.ANSI_RESET + "레벨: " + Game.user.getLevel();
-		result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
-		result += "\n                    ";
-		result += "\t" + FontStyle.ANSI_PURPLE + "|";
-		result += "\t" + FontStyle.ANSI_RESET + "경험치: " + Game.user.getXp();
-		if (Game.user.getXp() / 10 != 0)
-			result += "\t" + FontStyle.ANSI_PURPLE + "|";
-		else
-			result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
-		result += "\n                    ";
-		result += "\t" + FontStyle.ANSI_PURPLE + "=========================";
 		return result;
 	}
 }
