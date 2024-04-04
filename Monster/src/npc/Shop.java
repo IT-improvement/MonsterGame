@@ -10,6 +10,6 @@ public class Shop extends Npc {
 
 	@Override
 	public void printGuideMessage() {
-
+		
 	}
 }
