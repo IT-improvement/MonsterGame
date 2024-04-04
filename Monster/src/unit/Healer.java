@@ -1,16 +1,16 @@
 package unit;
 
-import abstractClass.User;
+import abstractClass.Job;
 import interfaces.Healable;
 
-public class Healer extends User implements Healable {
+public class Healer extends Job implements Healable {
 
 	public Healer() {
 		super("힐러", 0, 70, 1500, 0, 0);
 	}
 
 	@Override
-	public void heal(User user) {
+	public void heal(Job user) {
 		if (this.getMp() < 10) {
 			System.err.println("마나가 부족합니다.");
 			return;

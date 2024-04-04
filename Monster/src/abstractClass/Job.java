@@ -2,14 +2,14 @@ package abstractClass;
 
 import main.FontStyle;
 
-public abstract class User extends Life {
+public abstract class Job extends Life {
 
 	private int mp;
 	private int MAX_MP;
 	private int xp;
 	private int level;
 
-	public User(String name, int power, int hp, int mp, int x, int y) {
+	public Job(String name, int power, int hp, int mp, int x, int y) {
 		super(name, power, hp, x, y);
 		MAX_MP = this.mp = mp;
 		this.level = 1;

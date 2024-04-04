@@ -1,9 +1,9 @@
 package unit;
 
-import abstractClass.User;
+import abstractClass.Job;
 import interfaces.Skillable;
 
-public class Wizard extends User implements Skillable{
+public class Wizard extends Job implements Skillable{
 
 	public Wizard() {
 		super("마법사", 20, 100, 100,0,0);

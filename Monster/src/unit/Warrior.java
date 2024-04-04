@@ -1,9 +1,9 @@
 package unit;
 
-import abstractClass.User;
+import abstractClass.Job;
 import interfaces.Skillable;
 
-public class Warrior extends User implements Skillable {
+public class Warrior extends Job implements Skillable {
 
 	public Warrior() {
 		super("전사", 30, 200, 30,0,0);

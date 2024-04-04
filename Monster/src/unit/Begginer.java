@@ -1,8 +1,8 @@
 package unit;
 
-import abstractClass.User;
+import abstractClass.Job;
 
-public class Begginer extends User {
+public class Begginer extends Job {
 
 	public Begginer() {
 		super("초보자", 10, 100, 0, 0, 0);

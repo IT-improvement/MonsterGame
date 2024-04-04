@@ -1,7 +1,7 @@
 package interfaces;
 
-import abstractClass.User;
+import abstractClass.Job;
 
 public interface Healable {
-	public void heal(User user);
+	public void heal(Job user);
 }

@@ -6,16 +6,18 @@ import java.util.Scanner;
 import abstractClass.Map;
 import abstractClass.Monster;
 import abstractClass.Npc;
-import abstractClass.User;
+import abstractClass.Job;
 import interfaces.Skillable;
 import map.Town;
 import unit.Begginer;
 
 public class Game {
 
+	private Start start = new Start();
+
 	private Scanner scan = new Scanner(System.in);
 
-	public static User user;
+	public static Job user;
 	private Map map;
 	private Monster monster;
 
@@ -128,6 +130,17 @@ public class Game {
 		}
 	}
 
+	private int guild(int sel) {
+		if (sel == 1)
+			return sel;
+		else if (sel == 2)
+			return sel;
+		else if (sel == 3)
+			return sel;
+		else
+			return 0;
+	}
+
 	private void bassicAttack() {
 		System.out.println("평타!!");
 		monster.setHp(-user.getPower());
@@ -174,7 +187,13 @@ public class Game {
 		Town town = new Town();
 		ArrayList<Npc> npcList = town.getNpcList();
 		if (npc.equals(npcList.get(0).getName())) {
-
+			System.out.println(npcList.get(0));
+			npcList.get(0).printGuideMessage();
+			while (true) {
+				int sel = guild(inputNum("길드메뉴"));
+				if (sel == 0)
+					break;
+			}
 		} else if (npc.equals(npcList.get(1).getName())) {
 
 		} else if (npc.equals(npcList.get(2).getName())) {
