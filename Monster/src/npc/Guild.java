@@ -15,13 +15,11 @@ public class Guild extends Npc {
 		String side = FontStyle.ANSI_BLUE + "|";
 		String result = "";
 		result += line + "\n";
-		result += side + FontStyle.ANSI_CYAN + "\t\t길드 매니저\t\t" + side + "\n";
-		result += line + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t1. 길드창설\t" + side + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t2. 길드삭제\t" + side + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t3. 길드원관리\t" + side + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t*. 나가기\t\t" + side + "\n";
-		result += line + "\n";
+		result += line+"\n";
 		System.out.println(result);
 
 	}
@@ -29,18 +27,12 @@ public class Guild extends Npc {
 	@Override
 	public String toString() {
 		String result = "";
-		result += "⢀⣀⣀⣀⣀⣀⣀⣤⣶⣶⣶⣤⣤⣤⣄⣀⡀⡀⣀⣀⣀⣀⣀⣀⣤⣄⡀\n";
-		result += "⢠⣴⡿⠿⠛⠉⢉⣡⣴⠟⠋⠉⠉⠉⠉⠉⠉⠙⠻⢿⣿⣿⡇⠻⣿⣿⣿⡀\n";
-		result += "⢠⠏⠁⣀⡀⠀⠀⠉⠛⠁⢀⣠⠄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠤⣿⣿⣿⣿\n";
-		result += "⢠⠇⣀⣠⡾⠒⢲⣦⣤⣤⣤⣤⣤⣄⣀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆\n";
-		result += "⢠⡏⣿⣿⣿⡿⠖⠋⠉⢉⣉⡉⠉⠉⠉⠒⠋⠉⣀⣀⣽⣿⣿⣷⠀⢻⣿\n";
-		result += "⢸⠃⢹⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠇\n";
-		result += "⢸⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀\n";
-		result += "⡞⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁\n";
-		result += "⡇⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀\n";
-		result += "⢣⡀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⢀⡀\n";
-		result += "⠀⠙⠢⢄⡀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠋⢀⠞⠉\n";
-		result += "⠀⠀⠀⠈⠙⢦⣄⠀⠀⠀⠙⠻⠿⠿⠿⠿⠿⠿⠿⠛⠋⠉⢀⠞⠉\n";
+		String welcomeMessage = FontStyle.ANSI_CYAN+" 길드매니저에 오신걸 환영합니다 ";
+		int messageLength = welcomeMessage.length();
+
+		String line2 = FontStyle.ANSI_BLUE +" " + "\u25cf".repeat(messageLength+2);
+
+		result = "\n" + line2 + "\n" + "\u25cf " + welcomeMessage + FontStyle.ANSI_BLUE +" \u25cf\n" + line2;
 		return result;
 	}
 }
