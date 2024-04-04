@@ -1,7 +1,6 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 import abstractClass.Map;
@@ -163,7 +162,6 @@ public class Game {
 		if (checkMap()) {
 			String npc = checkNpc(tX, tY);
 			if (npc != null) {
-				System.out.println(npc);
 				meetNpc(npc);
 				return;
 			}
@@ -174,11 +172,12 @@ public class Game {
 
 	private void meetNpc(String npc) {
 		Town town = new Town();
-		if (npc.equals(town.getGULID())) {
+		ArrayList<Npc> npcList = town.getNpcList();
+		if (npc.equals(npcList.get(0).getName())) {
 
-		} else if (npc.equals(town.getSHOP())) {
+		} else if (npc.equals(npcList.get(1).getName())) {
 
-		} else if (npc.equals(town.getFILE())) {
+		} else if (npc.equals(npcList.get(2).getName())) {
 
 		}
 	}

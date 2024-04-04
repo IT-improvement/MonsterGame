@@ -10,6 +10,6 @@ public class File extends Npc {
 
 	@Override
 	public void printGuideMessage() {
-
+		
 	}
 }
