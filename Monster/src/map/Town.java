@@ -15,6 +15,18 @@ public class Town extends Map {
 
 	}
 
+	public String getGULID() {
+		return GULID;
+	}
+
+	public String getSHOP() {
+		return SHOP;
+	}
+
+	public String getFILE() {
+		return FILE;
+	}
+
 	@Override
 	public void setMonster() {
 		monsterList = null;
