@@ -1,5 +1,7 @@
 package map;
 
+import java.util.HashMap;
+
 import abstractClass.Map;
 import main.FontStyle;
 import main.Game;
@@ -10,9 +12,12 @@ public class Town extends Map {
 	private final String SHOP = "🥷";
 	private final String FILE = "🧑‍🏫";
 
+	private HashMap<String, Integer[]> npcList;
+
 	public Town() {
 		super(2, 11, FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "마을");
-
+		npcList = new HashMap<>();
+		addNpc();
 	}
 
 	public String getGULID() {
@@ -26,7 +31,20 @@ public class Town extends Map {
 	public String getFILE() {
 		return FILE;
 	}
+	
+	public HashMap<String, Integer[]> getNpcList() {
+		return npcList;
+	}
 
+	private void addNpc() {
+		Integer[] temp = new Integer[] { 0, 3 };
+		npcList.put(GULID, temp);
+		temp = new Integer[] { 0, 5 };
+		npcList.put(SHOP, temp);
+		temp = new Integer[] { 0, 7 };
+		npcList.put(FILE, temp);
+	}
+	
 	@Override
 	public void setMonster() {
 		monsterList = null;
