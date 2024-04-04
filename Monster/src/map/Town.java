@@ -12,28 +12,12 @@ import npc.Shop;
 
 public class Town extends Map {
 
-	private final String GULID = "🧑‍🎓";
-	private final String SHOP = "🥷";
-	private final String FILE = "🧑‍🏫";
-
 	private ArrayList<Npc> npcList;
 
 	public Town() {
 		super(10, 11, FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "마을");
 		npcList = new ArrayList<Npc>();
 		addNpc();
-	}
-
-	public String getGULID() {
-		return GULID;
-	}
-
-	public String getSHOP() {
-		return SHOP;
-	}
-
-	public String getFILE() {
-		return FILE;
 	}
 
 	public ArrayList<Npc> getNpcList() {
