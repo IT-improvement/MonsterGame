@@ -41,11 +41,21 @@
      ├── main
      │     ├── Main.java
      │     ├── Game.java
+     │     ├── Start.java
+     │     ├── Scan.java
      │     └── FontStyle.java
      │
      ├── interfaces
      │     ├── Healable.java
      │     └── Skillable.java
+     │
+     ├── abstractClass
+     │     ├── Item.java
+     │     ├── Job.java
+     │     ├── Life.java
+     │     ├── Npc.java
+     │     ├── Monster.java
+     │     └── Map.java
      │
      ├── unit
      │     ├── Begginer.java
@@ -56,9 +66,19 @@
      ├── monster
      │     ├── Golem.java
      │     └── Silme.java
+     │   
      ├── map
      │     ├── SlimeAndGolemForest.java
      │     └── Town.java
+     │   
+     ├── user
+     │     ├── User.java
+     │     └── UserManager.java
+     │   
+     ├── item
+     │     ├── Item.java
+     │     ├── Weapon.java
+     │     └── ItemManager.java
      │
      └── file
            ├── Golem.png
