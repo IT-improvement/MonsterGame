@@ -27,10 +27,10 @@ public class Town extends Map {
 	private void addNpc() {
 		Guild guild = new Guild();
 		npcList.add(guild);
-		File file = new File();
-		npcList.add(file);
 		Shop shop = new Shop();
 		npcList.add(shop);
+		File file = new File();
+		npcList.add(file);
 	}
 
 	@Override
