@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Scan {
-	private Scanner scan = new Scanner(System.in);
+	private static Scanner scan = new Scanner(System.in);
 
 	// input String
 	public String inputString(String message) {
@@ -12,7 +12,7 @@ public class Scan {
 	}
 
 	// input Num
-	public int inputNum(String message) {
+	public static int inputNum(String message) {
 		int num = -1;
 		try {
 			System.out.print(message + ": ");
