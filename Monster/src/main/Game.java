@@ -1,13 +1,12 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
-import java.util.Set;
 
 import abstractClass.Map;
 import abstractClass.Monster;
+import abstractClass.Npc;
 import abstractClass.User;
 import interfaces.Skillable;
 import map.Town;
@@ -174,6 +173,14 @@ public class Game {
 	}
 
 	private void meetNpc(String npc) {
+		Town town = new Town();
+		if (npc.equals(town.getGULID())) {
+
+		} else if (npc.equals(town.getSHOP())) {
+
+		} else if (npc.equals(town.getFILE())) {
+
+		}
 	}
 
 	private boolean checkMap() {
@@ -184,13 +191,11 @@ public class Game {
 
 	private String checkNpc(int x, int y) {
 		Town town = new Town();
-		HashMap<String, Integer[]> npcList = town.getNpcList();
-		Iterator<String> keys = npcList.keySet().iterator();
-		while (keys.hasNext()) {
-			String key = keys.next();
-			Integer position[] = npcList.get(key);
-			if (position[0] == y && position[1] == x) {
-				return key;
+		ArrayList<Npc> npcList = town.getNpcList();
+		for (int i = 0; i < npcList.size(); i++) {
+			Npc npc = npcList.get(i);
+			if (npc.getY() == y && npc.getX() == x) {
+				return npc.getName();
 			}
 		}
 		return null;

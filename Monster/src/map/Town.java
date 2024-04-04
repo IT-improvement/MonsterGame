@@ -1,10 +1,14 @@
 package map;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 import abstractClass.Map;
+import abstractClass.Npc;
 import main.FontStyle;
 import main.Game;
+import npc.File;
+import npc.Guild;
+import npc.Shop;
 
 public class Town extends Map {
 
@@ -12,11 +16,11 @@ public class Town extends Map {
 	private final String SHOP = "🥷";
 	private final String FILE = "🧑‍🏫";
 
-	private HashMap<String, Integer[]> npcList;
+	private ArrayList<Npc> npcList;
 
 	public Town() {
 		super(10, 11, FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "마을");
-		npcList = new HashMap<>();
+		npcList = new ArrayList<Npc>();
 		addNpc();
 	}
 
@@ -32,17 +36,17 @@ public class Town extends Map {
 		return FILE;
 	}
 
-	public HashMap<String, Integer[]> getNpcList() {
+	public ArrayList<Npc> getNpcList() {
 		return npcList;
 	}
 
 	private void addNpc() {
-		Integer[] temp = new Integer[] { 0, 3 };
-		npcList.put(GULID, temp);
-		temp = new Integer[] { 0, 5 };
-		npcList.put(SHOP, temp);
-		temp = new Integer[] { 0, 7 };
-		npcList.put(FILE, temp);
+		Guild guild = new Guild();
+		npcList.add(guild);
+		File file = new File();
+		npcList.add(file);
+		Shop shop = new Shop();
+		npcList.add(shop);
 	}
 
 	@Override
@@ -58,15 +62,11 @@ public class Town extends Map {
 				boolean isCheck = false;
 
 				if (i == 0) {
-					if (j == 3) {
-						isCheck = true;
-						result += FontStyle.ANSI_BLACK + GULID;
-					} else if (j == 5) {
-						isCheck = true;
-						result += FontStyle.ANSI_BLACK + SHOP;
-					} else if (j == 7) {
-						isCheck = true;
-						result += FontStyle.ANSI_BLACK + FILE;
+					for (Npc npc : npcList) {
+						if (j == npc.getX()) {
+							isCheck = true;
+							result += FontStyle.ANSI_BLACK + npc.getName();
+						}
 					}
 				}
 				if (!isCheck) {
@@ -75,7 +75,7 @@ public class Town extends Map {
 							result += FontStyle.ANSI_RESET + "🧍‍♂️";
 						else
 							result += FontStyle.ANSI_CYAN + "🟫";
-					}else {
+					} else {
 						result += FontStyle.ANSI_WHITE + "🟫";
 					}
 				}
