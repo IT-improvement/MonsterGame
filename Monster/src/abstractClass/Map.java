@@ -61,7 +61,7 @@ public abstract class Map {
 
 				for (Monster monster : monsterList) {
 					if (monster.getY() == i && monster.getX() == j) {
-						if (i == Game.user.getY() && j == Game.user.getX()) {
+						if (i == Game.job.getY() && j == Game.job.getX()) {
 							isCheck = true;
 							result += FontStyle.ANSI_RED + "🔫‍";
 						} else {
@@ -72,7 +72,7 @@ public abstract class Map {
 				}
 
 				if (!isCheck) {
-					if (i == Game.user.getY() && j == Game.user.getX()) {
+					if (i == Game.job.getY() && j == Game.job.getX()) {
 						result += FontStyle.ANSI_RESET + "🧍‍♂️";
 					} else {
 						result += FontStyle.ANSI_BROWN + "🟫";
@@ -83,24 +83,24 @@ public abstract class Map {
 				result += "\t" + FontStyle.ANSI_PURPLE + "=========================";
 			} else if (i == 3) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.user.getName();
+				result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.job.getName();
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 4) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "체력: " + Game.user.getHp() + "/" + Game.user.getMAX_HP();
+				result += "\t" + FontStyle.ANSI_RESET + "체력: " + Game.job.getHp() + "/" + Game.job.getMAX_HP();
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 5) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.user.getMp() + "/" + Game.user.getMAX_MP();
+				result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.job.getMp() + "/" + Game.job.getMAX_MP();
 				result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
 			} else if (i == 6) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "레벨: " + Game.user.getLevel();
+				result += "\t" + FontStyle.ANSI_RESET + "레벨: " + Game.job.getLevel();
 				result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
 			} else if (i == 7) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "경험치: " + Game.user.getXp();
-				if (Game.user.getXp() / 10 != 0)
+				result += "\t" + FontStyle.ANSI_RESET + "경험치: " + Game.job.getXp();
+				if (Game.job.getXp() / 10 != 0)
 					result += "\t" + FontStyle.ANSI_PURPLE + "|";
 				else
 					result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
