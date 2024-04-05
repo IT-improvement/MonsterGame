@@ -8,11 +8,10 @@ import abstractClass.Job;
 
 public class ItemList {
 	private ArrayList<Item> itemList;
-	private static HashMap<Job, ArrayList<Item>> userItemList;
 
 	public ItemList() {
 		itemList = new ArrayList<>();
-		userItemList = new HashMap<>();
+		setItemList();
 	}
 
 	private void setItemList() {
