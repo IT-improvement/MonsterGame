@@ -3,11 +3,18 @@ package abstractClass;
 public abstract class Monster extends Life {
 
 	private int xp;
+	private int money;
 
-	public Monster(String name, int power, int hp, int xp, int x, int y) {
+	public Monster(String name, int power, int hp, int xp, int x, int y, int money) {
 		super(name, power, hp, x, y);
 		this.xp = xp;
+		this.money = money;
 	}
+	
+	public int getMoney() {
+		return money;
+	}
+
 
 	public int getHp() {
 		return super.hp;

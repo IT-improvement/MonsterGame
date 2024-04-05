@@ -6,7 +6,7 @@ import main.FontStyle;
 public class Golem extends Monster {
 
 	public Golem(int x, int y) {
-		super("골렘", 5, 30, 50, x, y);
+		super("골렘", 5, 30, 50, x, y,1000);
 	}
 
 	@Override
