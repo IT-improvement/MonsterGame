@@ -22,7 +22,7 @@ public abstract class Job extends Life {
 	}
 
 	public void setCash(int cash) {
-		this.cash = cash;
+		this.cash += cash;
 	}
 
 	public int getHp() {
