@@ -6,8 +6,8 @@ public class Weapon extends Item {
 
 	private int power;
 
-	public Weapon(String name, int price, int power) {
-		super(name, price);
+	public Weapon(String name, int price, int power, String img) {
+		super(name, price, img);
 		this.power = power;
 	}
 

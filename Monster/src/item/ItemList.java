@@ -20,12 +20,12 @@ public class ItemList {
 	}
 
 	private Item addWeapon(String name, int price, int power) {
-		Item item = new Weapon(name, price, power);
+		Item item = new Weapon(name, price, power, "🪓");
 		return item;
 	}
 
 	private Item addDefense(String name, int price, int denfense) {
-		Item item = new Defense(name, price, denfense);
+		Item item = new Defense(name, price, denfense, "🛡️");
 		return item;
 	}
 

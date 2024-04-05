@@ -63,4 +63,7 @@ public class ItemManager {
 		return targetItem;
 	}
 
+	public ArrayList<Item> get(User user) {
+		return userItemList.get(user);
+	}
 }

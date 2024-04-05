@@ -3,10 +3,12 @@ package abstractClass;
 public abstract class Item {
 	private String name;
 	private int price;
+	private String img;
 
-	public Item(String name, int price) {
+	public Item(String name, int price, String img) {
 		this.name = name;
 		this.price = price;
+		this.img = img;
 	}
 
 	@Override
@@ -16,6 +18,10 @@ public abstract class Item {
 		return result;
 	}
 
+	public String getImg() {
+		return img;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -23,5 +29,5 @@ public abstract class Item {
 	public int getPrice() {
 		return price;
 	}
-	
+
 }
