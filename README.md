@@ -104,7 +104,7 @@
 
 ### 게임 시작
 <div align=center>
-<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/map.png">
+<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/map.png">
 </div>
 게임시작 화면입니다.<br>
 왼쪽에는 현재 위치한 맵, 오른쪽에는 캐릭터 상테창이 출력됩니다.<br>
@@ -112,7 +112,7 @@
 ### 맵 종류
 |마을|슬라임과 골렘의 숲|골렘의 숲|슬라임의 숲|
 |---|---|---|---|
-|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/Town.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/SlimeandGolemForest.png"> | | |
+|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Town.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/SlimeandGolemForest.png"> | | |
 
 
 ### 몬스터 등장
@@ -127,9 +127,18 @@
   
 |슬라임|골렘|
 |---|---|
-|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/Slime.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/file/Golem.png">|
+|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Slime.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Golem.png">|
 </div>
 <div align=center>
 <h1>시연영상</h1>
 </div>
+
+<div align=center>
+<h1>참고</h1>
+</div>
+
+### 싱글톤
+- 싱글톤 생성은 개발자가 순서를 정할 수 없기때문에 싱글톤 클래스를 서로 사용할 경우 싱글톤이 필요할 때 getInstance해줘야 한다.
+
+
 
