@@ -2,10 +2,16 @@ package user;
 
 import java.util.ArrayList;
 
+import file.FileManager;
+
 public class UserManager {
+
+	private FileManager fileManager;
+
 	private ArrayList<User> userList;
 
 	private UserManager() {
+		fileManager = FileManager.getInstance();
 		userList = new ArrayList<>();
 	}
 
@@ -19,6 +25,7 @@ public class UserManager {
 	public void addUser(String id, String pw, String nickName) {
 		User user = new User(id, nickName, pw);
 		userList.add(user);
+		fileManager.saveUser();
 	}
 
 	/* R */
