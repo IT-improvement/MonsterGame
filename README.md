@@ -112,7 +112,7 @@
 ### 맵 종류
 |마을|슬라임의 숲|슬라임과 골렘의 숲|골렘의 소굴|
 |---|---|---|---|
-|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Town.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/SlimeForest.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/SlimeandGolemForest.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/GolemForest.png">|
+|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Town.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/SlimeForest.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/SlimeAndGolemForest.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/GolemForest.png">|
 
 ### NPC 종류
 |길드|상점|파일|
