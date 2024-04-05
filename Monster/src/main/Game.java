@@ -9,6 +9,7 @@ import abstractClass.Monster;
 import abstractClass.Npc;
 import file.FileManager;
 import interfaces.Skillable;
+import item.ItemManager;
 import map.SlimeAndGolemForest;
 import map.Town;
 import unit.Begginer;
@@ -28,14 +29,14 @@ public class Game {
 	private boolean isRun;
 	private boolean isFight;
 
-	private static User user;
+	public static User user;
 
 	private FileManager fileManager;
 	private UserManager userManager;
 
 	public Game() {
 		job = new Begginer();
-		map = new SlimeAndGolemForest();
+		map = new Town();
 		monster = null;
 		isRun = true;
 	}
@@ -160,9 +161,11 @@ public class Game {
 	}
 
 	private int shop(int sel) {
-		if (sel == 1)
+		ItemManager itemManager = ItemManager.getInstance();
+		if (sel == 1) {
+			itemManager.addItem("방망이");
 			return sel;
-		else if (sel == 2)
+		} else if (sel == 2)
 			return sel;
 		else if (sel == 3)
 			return sel;
@@ -238,9 +241,9 @@ public class Game {
 					break;
 			}
 		} else if (npc.equals(npcList.get(1).getName())) {
-			System.out.println(npcList.get(1));
-			npcList.get(1).printGuideMessage();
 			while (true) {
+				System.out.println(npcList.get(1));
+				npcList.get(1).printGuideMessage();
 				int sel = shop(Scan.inputNum("상점메뉴"));
 				if (sel == 0)
 					break;
@@ -332,6 +335,7 @@ public class Game {
 		System.err.println("몬스터 처치!!");
 		map.monsterList.remove(monster);
 		System.out.println(monster.getXp() + "경험치 획득!");
+		job.setCash(monster.getMoney());
 		isFight = false;
 	}
 

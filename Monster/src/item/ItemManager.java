@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import abstractClass.Item;
+import abstractClass.Job;
 import main.Game;
 import user.User;
 
@@ -27,7 +28,21 @@ public class ItemManager {
 		User user = Game.user;
 		Item target = checkItem(itemName);
 		ArrayList<Item> targetItem = addItemList(user, target);
-		userItemList.put(user, targetItem);
+		if (payMoney(target)) {
+			userItemList.put(user, targetItem);
+			System.out.print(target.getName() + " 구매 완료!");
+		}
+	}
+
+	private boolean payMoney(Item item) {
+		Job job = Game.job;
+		int price = item.getPrice();
+		if (job.getCash() - price < 0) {
+			System.err.print("구매불가!");
+			return false;
+		}
+		Game.job.setCash(-price);
+		return true;
 	}
 
 	private Item checkItem(String itemName) {
