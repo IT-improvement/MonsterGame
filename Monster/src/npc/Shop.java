@@ -17,7 +17,7 @@ public class Shop extends Npc {
 		String result = "";
 		result += line + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t1. 방망이 구매\t" + side + "\n";
-		result += side + FontStyle.ANSI_CYAN + "\t\t2. 반지 구매\t" + side + "\n";
+		result += side + FontStyle.ANSI_CYAN + "\t\t2. 천갑옷 구매\t" + side + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t3. 칼 구매\t" + side + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t*. 나가기\t\t" + side + "\n";
 		result += line + "\n";
