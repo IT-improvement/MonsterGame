@@ -84,7 +84,6 @@ public class Game {
 	private void userSet(String id) {
 		userManager = UserManager.getInstance();
 		String data[] = userManager.selectJob(id);
-		System.out.println(data);
 	}
 
 	/* print */
@@ -223,19 +222,7 @@ public class Game {
 				return;
 			}
 		} else {
-			if (map instanceof SlimeAndGolemForest) {
-				if (tX == 0 && tY == 0) {
-					map = new SlimeForest();
-					job.setX(9);
-					job.setY(9);
-					return;
-				} else if (tX == 9 && tY == 9) {
-					map = new GolemForest();
-					job.setX(0);
-					job.setY(1);
-					return;
-				}
-			} else if (map instanceof SlimeForest) {
+			if (map instanceof SlimeForest) {
 				if (tX == 0 && tY == 0) {
 					map = new Town();
 					job.setX(9);
@@ -247,7 +234,29 @@ public class Game {
 					job.setY(1);
 					return;
 				}
-
+			} else if (map instanceof SlimeAndGolemForest) {
+				if (tX == 0 && tY == 0) {
+					map = new SlimeForest();
+					job.setX(8);
+					job.setY(9);
+					return;
+				} else if (tX == 9 && tY == 9) {
+					map = new GolemForest();
+					job.setX(0);
+					job.setY(1);
+					return;
+				}
+			} else if (map instanceof GolemForest) {
+				if (tX == 0 && tY == 0) {
+					map = new SlimeAndGolemForest();
+					job.setX(8);
+					job.setY(9);
+					return;
+				}
+				else if (tX == 9 && tY == 9) {
+					System.out.println("레벨이 부족합니다");
+					return;
+				}
 			}
 			if (tX < 0 || tX >= 10 || tY < 0 || tY >= 10) {
 				return;
