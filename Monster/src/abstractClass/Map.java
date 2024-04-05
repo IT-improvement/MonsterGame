@@ -85,11 +85,19 @@ public abstract class Map {
 					}
 				}
 			}
-			if (i == 2) {
+			if (i == 0) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "=========================";
-			} else if (i == 3) {
+			} else if (i == 1) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 				result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.job.getName();
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+			} else if (i == 2) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				result += "\t" + FontStyle.ANSI_RESET + "공격력: " + Game.job.getPower();
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+			} else if (i == 3) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				result += "\t" + FontStyle.ANSI_RESET + "방어력: " + Game.job.getDefense()+"";
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 4) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";

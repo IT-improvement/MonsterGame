@@ -74,13 +74,13 @@ public class Town extends Map {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 				result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.job.getName();
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-			}
-
-			if (i == 2) {
-				result += "\t" + FontStyle.ANSI_PURPLE + "=========================";
+			} else if (i == 2) {
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				result += "\t" + FontStyle.ANSI_RESET + "공격력: " + Game.job.getPower();
+				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 3) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.job.getName();
+				result += "\t" + FontStyle.ANSI_RESET + "방어력: " + Game.job.getDefense()+"";
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 4) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
