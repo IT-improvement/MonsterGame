@@ -74,7 +74,7 @@ public class FileManager {
 		}
 	}
 
-	public String loadJob() {
+	public void loadJob() {
 		String data = "";
 		try {
 			file = new File("JobList.txt");
@@ -88,12 +88,11 @@ public class FileManager {
 				br.close();
 				fr.close();
 				data = data.substring(0, data.length() - 1);
+				userJobset(data);
 			}
 		} catch (Exception e) {
-			System.err.println("직업 로드 실패" + e.getMessage());
+			e.printStackTrace();
 		}
-		userJobset(data);
-		return data;
 	}
 
 	private void userJobset(String info) {
@@ -115,7 +114,6 @@ public class FileManager {
 		data += id + ":" + map + "-" + job + "-" + Game.job.getHp() + "-" + Game.job.getMAX_HP() + "-"
 				+ Game.job.getMp() + "-" + Game.job.getMAX_MP() + "-" + Game.job.getPower() + "-" + Game.job.getLevel()
 				+ "-" + Game.job.getXp();
-		System.out.println(data);
 		try {
 			file = new File("JobList.txt");
 			fw = new FileWriter(file);

@@ -12,6 +12,7 @@ import interfaces.Skillable;
 import map.Town;
 import unit.Begginer;
 import user.User;
+import user.UserManager;
 
 public class Game {
 
@@ -29,16 +30,13 @@ public class Game {
 	private static User user;
 
 	private FileManager fileManager;
+	private UserManager userManager;
 
 	public Game() {
 		job = new Begginer();
 		map = new Town();
 		monster = null;
 		isRun = true;
-	}
-
-	private void setGame() {
-
 	}
 
 	// input String
@@ -61,7 +59,9 @@ public class Game {
 	}
 
 	public void run() {
-		 user = start.run();
+		user = start.run();
+		userSet(user.getId());
+		userManager.setJob();
 		while (isRun) {
 			// printStart();
 			System.out.println(map.getName() + FontStyle.ANSI_RESET);
@@ -74,6 +74,12 @@ public class Game {
 			}
 			fight();
 		}
+	}
+
+	private void userSet(String id) {
+		userManager = UserManager.getInstance();
+		String data[] = userManager.selectJob(id);
+		System.out.println(data);
 	}
 
 	/* print */

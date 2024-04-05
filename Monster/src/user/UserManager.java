@@ -24,6 +24,11 @@ public class UserManager {
 		return instance;
 	}
 
+	public void setJob() {
+		fileManager = FileManager.getInstance();
+		fileManager.loadJob();
+	}
+
 	/* C */
 	public void addUser(String id, String pw, String nickName) {
 		User user = new User(id, nickName, pw);
@@ -71,9 +76,9 @@ public class UserManager {
 
 		return null;
 	}
-	
-	public void setJob() {
-		
+
+	public String[] selectJob(String id) {
+		return jobData.get(id);
 	}
 
 	/* U */
