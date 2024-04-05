@@ -16,7 +16,8 @@ public class File extends Npc {
 		String result = "";
 		result += line + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t1. 저장\t\t" + side + "\n";
-		result += side + FontStyle.ANSI_CYAN + "\t\t2. 나가기\t\t" + side + "\n";
+		result += side + FontStyle.ANSI_CYAN + "\t\t2. 종료\t\t" + side + "\n";
+		result += side + FontStyle.ANSI_CYAN + "\t\t*. 나가기\t\t" + side + "\n";
 		result += line+"\n";
 		System.out.println(result);
 	}
