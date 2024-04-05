@@ -120,6 +120,9 @@
 |<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Gulid.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Shop.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/file.png">| 
 
 - 영상
+<div align=center>
+  <img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/npc.gif">
+</div>
 
 ### 몬스터 등장
 <div align=center>
@@ -127,7 +130,6 @@
 </div>
 몬스터 등장 화면입니다.<br>
 몬스턴가 등장 후 몬스터 이름과 함께 사용자가 전투에서 선택할 수 있는 메뉴가 나옵니다.<br>
-
 ### 몬스터 종류
 <div align=center>
   
