@@ -15,4 +15,13 @@ public abstract class Item {
 		result = String.format("%s: %d원", name, price);
 		return result;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+	
 }
