@@ -16,10 +16,16 @@ public class ItemList {
 
 	private void setItemList() {
 		itemList.add(addWeapon("방망이", 1000, 10));
+		itemList.add(addDefense("천갑옷", 2000, 10));
 	}
 
 	private Item addWeapon(String name, int price, int power) {
 		Item item = new Weapon(name, price, power);
+		return item;
+	}
+
+	private Item addDefense(String name, int price, int denfense) {
+		Item item = new Defense(name, price, denfense);
 		return item;
 	}
 
