@@ -22,4 +22,8 @@ public class ItemList {
 		Item item = new Weapon(name, price, power);
 		return item;
 	}
+
+	public ArrayList<Item> getItemList() {
+		return itemList;
+	}
 }
