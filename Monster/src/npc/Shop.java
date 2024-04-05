@@ -2,6 +2,7 @@ package npc;
 
 import abstractClass.Npc;
 import main.FontStyle;
+import main.Game;
 
 public class Shop extends Npc {
 
@@ -19,19 +20,21 @@ public class Shop extends Npc {
 		result += side + FontStyle.ANSI_CYAN + "\t\t2. 반지 구매\t" + side + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t3. 칼 구매\t" + side + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t*. 나가기\t\t" + side + "\n";
-		result += line+"\n";
+		result += line + "\n";
 		System.out.println(result);
 	}
 
 	@Override
 	public String toString() {
 		String result = "";
-		String welcomeMessage = FontStyle.ANSI_CYAN+" 상점매니저에 오신걸 환영합니다 ";
+		String welcomeMessage = FontStyle.ANSI_CYAN + "  상점매니저에 오신걸 환영합니다 ";
 		int messageLength = welcomeMessage.length();
 
-		String line2 = FontStyle.ANSI_BLUE +" " + "\u25cf".repeat(messageLength+2);
+		String line2 = FontStyle.ANSI_BLUE + "" + "\u25cf".repeat(messageLength+1);
 
-		result = "\n" + line2 + "\n" + "\u25cf " + welcomeMessage + FontStyle.ANSI_BLUE +" \u25cf\n" + line2;
+		result += "\n" + line2 + "\n"  + welcomeMessage + FontStyle.ANSI_BLUE ;
+		result += "\n"  + FontStyle.ANSI_CYAN + "     보유 금액: " + Game.job.getCash() + "\n"
+				+ FontStyle.ANSI_BLUE + line2;
 		return result;
 	}
 }
