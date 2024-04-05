@@ -68,8 +68,6 @@ public class Game {
 		userSet(user.getId());
 		userManager.setJob();
 		while (isRun) {
-			System.out.println("x: "+job.getX());
-			System.out.println("y: "+job.getY());
 			// printStart();
 			System.out.println(map.getName() + FontStyle.ANSI_RESET);
 			System.out.println(map);

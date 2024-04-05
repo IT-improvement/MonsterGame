@@ -10,7 +10,7 @@ public class SlimeAndGolemForest extends Map {
 	String mons[] = { "Golem", "Slime" };
 
 	public SlimeAndGolemForest() {
-		super(10, 10, FontStyle.ANSI_CYAN +FontStyle.ANSI_BOLD +"슬라임과 골렘의 숲",FontStyle.ANSI_CYAN );
+		super(10, 10, FontStyle.ANSI_BROWN +FontStyle.ANSI_BOLD +"슬라임과 골렘의 숲",FontStyle.ANSI_BROWN );
 		setMonster();
 	}
 
