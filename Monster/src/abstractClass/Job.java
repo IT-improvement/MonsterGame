@@ -8,11 +8,21 @@ public abstract class Job extends Life {
 	private int MAX_MP;
 	private int xp;
 	private int level;
+	private int cash;
 
 	public Job(String name, int power, int hp, int mp, int x, int y) {
 		super(name, power, hp, x, y);
 		MAX_MP = this.mp = mp;
 		this.level = 1;
+		this.cash = 10000;
+	}
+
+	public int getCash() {
+		return cash;
+	}
+
+	public void setCash(int cash) {
+		this.cash = cash;
 	}
 
 	public int getHp() {
