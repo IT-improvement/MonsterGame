@@ -61,7 +61,7 @@ public class Game {
 	}
 
 	public void run() {
-		// user = start.run();
+		 user = start.run();
 		while (isRun) {
 			// printStart();
 			System.out.println(map.getName() + FontStyle.ANSI_RESET);
@@ -155,7 +155,10 @@ public class Game {
 	private int file(int sel) {
 		if (sel == 1) {
 			fileManager = FileManager.getInstance();
-			fileManager.saveJob();
+			String mapName = map.getClass().getSimpleName();
+			String jobName = job.getClass().getSimpleName();
+			String id = user.getId();
+			fileManager.saveJob(mapName, jobName, id);
 			return sel;
 		} else if (sel == 2)
 			return sel;

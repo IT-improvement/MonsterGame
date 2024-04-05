@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
+import main.Game;
 import user.User;
 import user.UserManager;
 
@@ -69,6 +70,64 @@ public class FileManager {
 			fw.close();
 		} catch (Exception e) {
 			System.err.println("저장오류");
+		}
+	}
+
+	public void loadJob() {
+		String data = "";
+		try {
+			file = new File("JobList.txt");
+			fr = new FileReader(file);
+			br = new BufferedReader(fr);
+			while (br.ready()) {
+				data += br.readLine();
+				data += "\n";
+			}
+			br.close();
+			fr.close();
+		} catch (Exception e) {
+			System.err.println("유저 로드 실패");
+		}
+	}
+
+	public String loadJobData() {
+		String data = "";
+		try {
+			file = new File("JobList.txt");
+			if (file.exists()) {
+				fr = new FileReader(file);
+				br = new BufferedReader(fr);
+				while (br.ready()) {
+					data += br.readLine();
+					data += "\n";
+				}
+				br.close();
+				fr.close();
+				data = data.substring(0, data.length() - 1);
+			}
+		} catch (Exception e) {
+			System.err.println("직업 로드 실패" + e.getMessage());
+		}
+		return data;
+	}
+
+	// id-job-map-x-y-hp-MAX_HP-mp-MAX_MP-power-level-xp
+	public void saveJob(String job, String map, String id) {
+		String data = "";
+		data += loadJobData();
+		if (!loadJobData().equals(""))
+			data += "\n";
+		data += job + "-" + map + "-" + id + "-" + Game.job.getHp() + "-" + Game.job.getMAX_HP() + "-"
+				+ Game.job.getMp() + "-" + Game.job.getMAX_MP() + "-" + Game.job.getPower() + "-" + Game.job.getLevel()
+				+ "-" + Game.job.getXp();
+		System.out.println(data);
+		try {
+			file = new File("JobList.txt");
+			fw = new FileWriter(file);
+			fw.write(data);
+			fw.close();
+		} catch (Exception e) {
+			System.err.println("직업 저장 실패");
 		}
 	}
 }

@@ -9,9 +9,11 @@ public class UserManager {
 	private FileManager fileManager;
 
 	public static ArrayList<User> userList;
+	public static ArrayList<String> jobData;
 
 	private UserManager() {
 		userList = new ArrayList<>();
+		jobData = new ArrayList<>();
 	}
 
 	private static UserManager instance = new UserManager();
