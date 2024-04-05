@@ -57,6 +57,10 @@ public abstract class Map {
 					result += FontStyle.ANSI_CYAN + "🌪️";
 					continue;
 				}
+				if(i==width-1&&j==height-1) {
+					result += FontStyle.ANSI_CYAN + "🌪️";
+					continue;
+				}
 				boolean isCheck = false;
 
 				for (Monster monster : monsterList) {

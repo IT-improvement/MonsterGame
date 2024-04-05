@@ -43,6 +43,10 @@ public class Town extends Map {
 		String result = "";
 		for (int i = 0; i < this.getHeight(); i++) {
 			for (int j = 0; j < this.getWidth(); j++) {
+				if (i == 1 && j == 10) {
+					result += FontStyle.ANSI_CYAN + "🌪️";
+					continue;
+				}
 				boolean isCheck = false;
 
 				if (i == 0) {
