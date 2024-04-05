@@ -167,9 +167,10 @@ public class Game {
 		if (sel == 1) {
 			itemManager.addItem("방망이");
 			return sel;
-		} else if (sel == 2)
+		} else if (sel == 2) {
+			itemManager.addItem("천갑옷");
 			return sel;
-		else if (sel == 3)
+		} else if (sel == 3)
 			return sel;
 		else
 			return 0;
@@ -200,9 +201,17 @@ public class Game {
 		monster.setHp(-damage);
 	}
 
+	private void inven() {
+		
+	}
+
 	private void move(String dir) {
 		int tX = job.getX();
 		int tY = job.getY();
+		if (dir.equals("r")) {
+			inven();
+			return;
+		}
 		if (dir.equals("a"))
 			tX--;
 		else if (dir.equals("d"))
@@ -252,8 +261,7 @@ public class Game {
 					job.setX(8);
 					job.setY(9);
 					return;
-				}
-				else if (tX == 9 && tY == 9) {
+				} else if (tX == 9 && tY == 9) {
 					System.out.println("레벨이 부족합니다");
 					return;
 				}
