@@ -7,6 +7,7 @@ import abstractClass.Job;
 import abstractClass.Map;
 import abstractClass.Monster;
 import abstractClass.Npc;
+import file.FileManager;
 import interfaces.Skillable;
 import map.Town;
 import unit.Begginer;
@@ -27,11 +28,17 @@ public class Game {
 
 	private static User user;
 
+	private FileManager fileManager;
+
 	public Game() {
 		job = new Begginer();
 		map = new Town();
 		monster = null;
 		isRun = true;
+	}
+
+	private void setGame() {
+
 	}
 
 	// input String
@@ -54,7 +61,7 @@ public class Game {
 	}
 
 	public void run() {
-		user = start.run();
+		// user = start.run();
 		while (isRun) {
 			// printStart();
 			System.out.println(map.getName() + FontStyle.ANSI_RESET);
@@ -145,6 +152,17 @@ public class Game {
 			return 0;
 	}
 
+	private int file(int sel) {
+		if (sel == 1) {
+			fileManager = FileManager.getInstance();
+			fileManager.saveJob();
+			return sel;
+		} else if (sel == 2)
+			return sel;
+		else
+			return 0;
+	}
+
 	private void bassicAttack() {
 		System.out.println("평타!!");
 		monster.setHp(-job.getPower());
@@ -194,14 +212,25 @@ public class Game {
 			System.out.println(npcList.get(0));
 			npcList.get(0).printGuideMessage();
 			while (true) {
-				int sel = guild(inputNum("길드메뉴"));
+				int sel = guild(Scan.inputNum("길드메뉴"));
 				if (sel == 0)
 					break;
 			}
 		} else if (npc.equals(npcList.get(1).getName())) {
-
+			System.out.println(npcList.get(1));
+			npcList.get(1).printGuideMessage();
 		} else if (npc.equals(npcList.get(2).getName())) {
-
+			System.out.println(npcList.get(2));
+			npcList.get(2).printGuideMessage();
+			while (true) {
+				int sel = file(Scan.inputNum("파일메뉴"));
+				if (sel == 0)
+					break;
+				else if (sel == 2) {
+					isRun = false;
+					break;
+				}
+			}
 		}
 	}
 
