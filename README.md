@@ -138,8 +138,9 @@
 |---|---|
 |<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Slime.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Golem.png">|
 </div>
+
 <div align=center>
-<h1>시연영상</h1>
+<h1>참고</h1>
 </div>
 
 ### 싱글톤
