@@ -203,9 +203,36 @@ public class Game {
 
 	private void inven() {
 		Inven inven = new Inven();
+		int size = inven.size();
+		if(size== 0 ) {
+			System.out.println(FontStyle.ANSI_RED + "아이템이 없습니다.");
+			return;
+		}
 		while (true) {
 			System.out.println(inven);
+			int index = moveInven(inven.getIndex(), Scan.inputString("입력"), size);
+			if (index == -1)
+				break;
+			inven.setIndex(index);
 		}
+	}
+
+	private int moveInven(int index, String dir, int size) {
+		int tempIndex = index;
+		if (dir.equals("a"))
+			tempIndex--;
+		else if (dir.equals("d"))
+			tempIndex++;
+		else if (dir.equals("w"))
+			tempIndex -= 3;
+		else if (dir.equals("s"))
+			tempIndex += 3;
+		else
+			return -1;
+		if (tempIndex < 0 || tempIndex >= size)
+			return index;
+
+		return tempIndex;
 	}
 
 	private void move(String dir) {

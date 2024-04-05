@@ -16,7 +16,7 @@ public class Inven {
 		ItemManager itemManager = ItemManager.getInstance();
 		itemList = itemManager.get(Game.user);
 	}
-	
+
 	public int getIndex() {
 		return index;
 	}
@@ -25,23 +25,26 @@ public class Inven {
 		this.index = index;
 	}
 
+	public int size() {
+		return itemList == null ? 0 : itemList.size();
+	}
+
 	@Override
 	public String toString() {
 		String result = "";
-		if (itemList == null) {
-			result = FontStyle.ANSI_RED + "아이템이 없습니다.";
-		} else {
-			for (int i = 0; i < itemList.size(); i++) {
-				String img = itemList.get(i).getImg();
-				if (index == i) {
-					result += FontStyle.ANSI_PURPLE_BACKGROUND_LIGHT + FontStyle.ANSI_WHITE + img;
-				} else {
-					result += img;
-				}
-				if (i % 3 == 2)
-					result += "\n";
+
+		for (int i = 0; i < itemList.size(); i++) {
+			String img = itemList.get(i).getImg();
+			if (index == i) {
+				result += FontStyle.ANSI_PURPLE_BACKGROUND_LIGHT + FontStyle.ANSI_WHITE + img;
+			} else {
+				result += FontStyle.ANSI_RESET + img;
 			}
+			if (i % 3 == 2)
+				result += "\n";
 		}
+
+		result += FontStyle.ANSI_RESET;
 		return result;
 	}
 }
