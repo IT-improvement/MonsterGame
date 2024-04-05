@@ -1,13 +1,26 @@
 package file;
 
-public class FileManager {
-	private FileManager() {
+import user.UserManager;
 
+public class FileManager {
+
+	private UserManager userManager;
+
+	private FileManager() {
+		userManager = UserManager.getInstance();
 	}
 
 	private static FileManager instance = new FileManager();
 
 	public static FileManager getInstance() {
 		return instance;
+	}
+
+	public void loadUser() {
+
+	}
+
+	public void saveUser() {
+
 	}
 }
