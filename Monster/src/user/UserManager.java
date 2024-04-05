@@ -22,6 +22,10 @@ public class UserManager {
 	}
 
 	/* R */
+	public ArrayList<User> getAll() {
+		return userList;
+	}
+
 	public String findId(String id) {
 		for (User user : userList)
 			if (user.getId().equals(id))
