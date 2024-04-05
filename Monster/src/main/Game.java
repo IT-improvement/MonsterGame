@@ -14,8 +14,8 @@ import map.GolemForest;
 import map.SlimeAndGolemForest;
 import map.SlimeForest;
 import map.Town;
-import monster.Golem;
 import unit.Begginer;
+import user.Inven;
 import user.User;
 import user.UserManager;
 
@@ -202,7 +202,10 @@ public class Game {
 	}
 
 	private void inven() {
-		
+		Inven inven = new Inven();
+		while (true) {
+			System.out.println(inven);
+		}
 	}
 
 	private void move(String dir) {
