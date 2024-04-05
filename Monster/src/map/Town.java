@@ -15,7 +15,7 @@ public class Town extends Map {
 	private ArrayList<Npc> npcList;
 
 	public Town() {
-		super(10, 11, FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "마을");
+		super(10, 11, FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "마을",FontStyle.ANSI_CYAN);
 		npcList = new ArrayList<Npc>();
 		addNpc();
 	}

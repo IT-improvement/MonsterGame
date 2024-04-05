@@ -10,11 +10,13 @@ public abstract class Map {
 	private int width;
 	private String name;
 	public ArrayList<Monster> monsterList;
+	private String mapColor;
 
-	public Map(int height, int width, String name) {
+	public Map(int height, int width, String name, String mapColor) {
 		this.name = name;
 		this.height = height;
 		this.width = width;
+		this.mapColor = mapColor;
 		monsterList = new ArrayList<>();
 	}
 
@@ -57,7 +59,7 @@ public abstract class Map {
 					result += FontStyle.ANSI_CYAN + "🌪️";
 					continue;
 				}
-				if(i==width-1&&j==height-1) {
+				if (i == width - 1 && j == height - 1) {
 					result += FontStyle.ANSI_CYAN + "🌪️";
 					continue;
 				}
@@ -79,7 +81,7 @@ public abstract class Map {
 					if (i == Game.job.getY() && j == Game.job.getX()) {
 						result += FontStyle.ANSI_RESET + "🧍‍♂️";
 					} else {
-						result += FontStyle.ANSI_BROWN + "🟫";
+						result += mapColor + "🟫";
 					}
 				}
 			}
