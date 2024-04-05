@@ -1,6 +1,7 @@
 package user;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import file.FileManager;
 
@@ -9,11 +10,12 @@ public class UserManager {
 	private FileManager fileManager;
 
 	public static ArrayList<User> userList;
-	public static ArrayList<String> jobData;
+
+	public static HashMap<String, String[]> jobData;
 
 	private UserManager() {
 		userList = new ArrayList<>();
-		jobData = new ArrayList<>();
+		jobData = new HashMap<>();
 	}
 
 	private static UserManager instance = new UserManager();
@@ -32,6 +34,14 @@ public class UserManager {
 
 	public void setUser(ArrayList<User> users) {
 		userList = users;
+	}
+
+	public static HashMap<String, String[]> getJobData() {
+		return jobData;
+	}
+
+	public void setJobData(HashMap<String, String[]> info) {
+		jobData = info;
 	}
 
 	/* R */
@@ -60,6 +70,10 @@ public class UserManager {
 					return user;
 
 		return null;
+	}
+	
+	public void setJob() {
+		
 	}
 
 	/* U */

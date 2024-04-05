@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import main.Game;
 import user.User;
@@ -73,24 +74,7 @@ public class FileManager {
 		}
 	}
 
-	public void loadJob() {
-		String data = "";
-		try {
-			file = new File("JobList.txt");
-			fr = new FileReader(file);
-			br = new BufferedReader(fr);
-			while (br.ready()) {
-				data += br.readLine();
-				data += "\n";
-			}
-			br.close();
-			fr.close();
-		} catch (Exception e) {
-			System.err.println("유저 로드 실패");
-		}
-	}
-
-	public String loadJobData() {
+	public String loadJob() {
 		String data = "";
 		try {
 			file = new File("JobList.txt");
@@ -108,16 +92,27 @@ public class FileManager {
 		} catch (Exception e) {
 			System.err.println("직업 로드 실패" + e.getMessage());
 		}
+		userJobset(data);
 		return data;
 	}
 
-	// id-job-map-x-y-hp-MAX_HP-mp-MAX_MP-power-level-xp
+	private void userJobset(String info) {
+		String jobinfoTemp[] = info.split("\n");
+		HashMap<String, String[]> jobinfo = new HashMap<>();
+		for (int i = 0; i < jobinfoTemp.length; i++) {
+			String temp[] = jobinfoTemp[i].split(":");
+			String id = temp[0];
+			String infoTemp[] = temp[1].split("-");
+			jobinfo.put(id, infoTemp);
+		}
+		userManager = UserManager.getInstance();
+		userManager.setJobData(jobinfo);
+	}
+
+	// id:job-map-x-y-hp-MAX_HP-mp-MAX_MP-power-level-xp
 	public void saveJob(String job, String map, String id) {
 		String data = "";
-		data += loadJobData();
-		if (!loadJobData().equals(""))
-			data += "\n";
-		data += job + "-" + map + "-" + id + "-" + Game.job.getHp() + "-" + Game.job.getMAX_HP() + "-"
+		data += id + ":" + map + "-" + job + "-" + Game.job.getHp() + "-" + Game.job.getMAX_HP() + "-"
 				+ Game.job.getMp() + "-" + Game.job.getMAX_MP() + "-" + Game.job.getPower() + "-" + Game.job.getLevel()
 				+ "-" + Game.job.getXp();
 		System.out.println(data);
