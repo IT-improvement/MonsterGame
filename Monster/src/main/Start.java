@@ -1,12 +1,19 @@
 package main;
 
+import file.FileManager;
 import user.User;
 import user.UserManager;
 
 public class Start {
 
-	UserManager userManager = UserManager.getInstance();
-
+	UserManager userManager;
+	FileManager fileManager;
+	
+	public Start() {
+		userManager = UserManager.getInstance();
+		fileManager = FileManager.getInstance();
+		fileManager.loadUser();
+	}
 	/* print Method */
 	private void printGuideMessage() {
 		System.out.println("1)회원가입");
