@@ -9,6 +9,7 @@ import abstractClass.Monster;
 import abstractClass.Npc;
 import file.FileManager;
 import interfaces.Skillable;
+import map.SlimeAndGolemForest;
 import map.Town;
 import unit.Begginer;
 import user.User;
@@ -34,7 +35,7 @@ public class Game {
 
 	public Game() {
 		job = new Begginer();
-		map = new Town();
+		map = new SlimeAndGolemForest();
 		monster = null;
 		isRun = true;
 	}
@@ -158,6 +159,17 @@ public class Game {
 			return 0;
 	}
 
+	private int shop(int sel) {
+		if (sel == 1)
+			return sel;
+		else if (sel == 2)
+			return sel;
+		else if (sel == 3)
+			return sel;
+		else
+			return 0;
+	}
+
 	private int file(int sel) {
 		if (sel == 1) {
 			fileManager = FileManager.getInstance();
@@ -228,6 +240,11 @@ public class Game {
 		} else if (npc.equals(npcList.get(1).getName())) {
 			System.out.println(npcList.get(1));
 			npcList.get(1).printGuideMessage();
+			while (true) {
+				int sel = shop(Scan.inputNum("상점메뉴"));
+				if (sel == 0)
+					break;
+			}
 		} else if (npc.equals(npcList.get(2).getName())) {
 			System.out.println(npcList.get(2));
 			npcList.get(2).printGuideMessage();
@@ -274,6 +291,11 @@ public class Game {
 
 	private void fight() {
 		System.out.println(FontStyle.ANSI_BOLD + FontStyle.ANSI_RED + "몬스터 등장!!");
+		try {
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		battle();
 	}
 
@@ -288,11 +310,15 @@ public class Game {
 			if (!isFight)
 				break;
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(800);
 			} catch (Exception e) {
 			}
 			monsterAttack();
 			printMonsterAttack();
+			try {
+				Thread.sleep(800);
+			} catch (Exception e) {
+			}
 			if (job.isDead()) {
 				deadUser();
 			}

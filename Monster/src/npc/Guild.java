@@ -21,7 +21,6 @@ public class Guild extends Npc {
 		result += side + FontStyle.ANSI_CYAN + "\t\t*. 나가기\t\t" + side + "\n";
 		result += line+"\n";
 		System.out.println(result);
-
 	}
 
 	@Override

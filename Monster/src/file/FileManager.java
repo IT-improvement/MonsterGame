@@ -4,8 +4,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.security.KeyStore.Entry;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 import main.Game;
 import user.User;
@@ -111,6 +114,8 @@ public class FileManager {
 	// id:job-map-x-y-hp-MAX_HP-mp-MAX_MP-power-level-xp
 	public void saveJob(String job, String map, String id) {
 		String data = "";
+		if (!uploadData().equals(""))
+			data += uploadData() + "\n";
 		data += id + ":" + map + "-" + job + "-" + Game.job.getHp() + "-" + Game.job.getMAX_HP() + "-"
 				+ Game.job.getMp() + "-" + Game.job.getMAX_MP() + "-" + Game.job.getPower() + "-" + Game.job.getLevel()
 				+ "-" + Game.job.getXp();
@@ -122,5 +127,27 @@ public class FileManager {
 		} catch (Exception e) {
 			System.err.println("직업 저장 실패");
 		}
+	}
+
+	private String uploadData() {
+		userManager = UserManager.getInstance();
+		HashMap<String, String[]> jobData = userManager.getJobData();
+		if (jobData.size() == 0)
+			return "";
+
+		String result = "";
+		Set set = jobData.keySet();
+		Iterator<String> iterator = set.iterator();
+		while (iterator.hasNext()) {
+			String key = iterator.next();
+			String temp[] = jobData.get(key);
+			result += key + ":";
+			for (int i = 0; i < temp.length; i++) {
+				result += "-" + temp[i];
+			}
+			result += "\n";
+		}
+		result = result.substring(0, result.length() - 1);
+		return result;
 	}
 }
