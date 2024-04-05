@@ -3,13 +3,14 @@ package main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import abstractClass.Job;
 import abstractClass.Map;
 import abstractClass.Monster;
 import abstractClass.Npc;
-import abstractClass.Job;
 import interfaces.Skillable;
 import map.Town;
 import unit.Begginer;
+import user.User;
 
 public class Game {
 
@@ -17,15 +18,17 @@ public class Game {
 
 	private Scanner scan = new Scanner(System.in);
 
-	public static Job user;
+	public static Job job;
 	private Map map;
 	private Monster monster;
 
 	private boolean isRun;
 	private boolean isFight;
 
+	private static User user;
+
 	public Game() {
-		user = new Begginer();
+		job = new Begginer();
 		map = new Town();
 		monster = null;
 		isRun = true;
@@ -51,6 +54,7 @@ public class Game {
 	}
 
 	public void run() {
+		user = start.run();
 		while (isRun) {
 			// printStart();
 			System.out.println(map.getName() + FontStyle.ANSI_RESET);
@@ -95,7 +99,7 @@ public class Game {
 	private void printMonsterAttack() {
 		System.out.println(FontStyle.ANSI_RED + monster.getName() + ": " + monster.getMessage() + FontStyle.ANSI_RESET);
 		String result = "";
-		result += FontStyle.ANSI_RED + user.getName() + ": [" + user.getHp() + "|" + user.getMAX_HP() + "]"
+		result += FontStyle.ANSI_RED + job.getName() + ": [" + job.getHp() + "|" + job.getMAX_HP() + "]"
 				+ FontStyle.ANSI_RESET;
 		System.out.println(result);
 	}
@@ -143,18 +147,18 @@ public class Game {
 
 	private void bassicAttack() {
 		System.out.println("평타!!");
-		monster.setHp(-user.getPower());
+		monster.setHp(-job.getPower());
 	}
 
 	private void firstSkill() {
 		System.out.println("스킬~");
-		int damage = user.skill();
+		int damage = job.skill();
 		monster.setHp(-damage);
 	}
 
 	private void move(String dir) {
-		int tX = user.getX();
-		int tY = user.getY();
+		int tX = job.getX();
+		int tY = job.getY();
 		if (dir.equals("a"))
 			tX--;
 		else if (dir.equals("d"))
@@ -179,8 +183,8 @@ public class Game {
 				return;
 			}
 		}
-		user.setX(tX);
-		user.setY(tY);
+		job.setX(tX);
+		job.setY(tY);
 	}
 
 	private void meetNpc(String npc) {
@@ -222,7 +226,7 @@ public class Game {
 	private Monster isFight() {
 		ArrayList<Monster> monsterList = map.getMonsterList();
 		for (Monster monster : monsterList) {
-			if (monster.getX() == user.getX() && monster.getY() == user.getY()) {
+			if (monster.getX() == job.getX() && monster.getY() == job.getY()) {
 				isFight = true;
 				return monster;
 			}
@@ -251,7 +255,7 @@ public class Game {
 			}
 			monsterAttack();
 			printMonsterAttack();
-			if (user.isDead()) {
+			if (job.isDead()) {
 				deadUser();
 			}
 			if (!isFight)
@@ -260,7 +264,7 @@ public class Game {
 	}
 
 	private void deadMonster() {
-		user.setXp(monster.getXp());
+		job.setXp(monster.getXp());
 		System.err.println("몬스터 처치!!");
 		map.monsterList.remove(monster);
 		System.out.println(monster.getXp() + "경험치 획득!");
@@ -274,7 +278,7 @@ public class Game {
 	}
 
 	private void userAttack() {
-		if (user instanceof Skillable) {
+		if (job instanceof Skillable) {
 			printFristJob();
 			fristJob(inputNum("메뉴입력"));
 		} else {
@@ -284,6 +288,6 @@ public class Game {
 	}
 
 	private void monsterAttack() {
-		user.setHp(-monster.getPower());
+		job.setHp(-monster.getPower());
 	}
 }
