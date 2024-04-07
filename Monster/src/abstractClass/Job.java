@@ -1,5 +1,7 @@
 package abstractClass;
 
+import item.Defense;
+import item.Weapon;
 import main.FontStyle;
 
 public abstract class Job extends Life {
@@ -9,14 +11,16 @@ public abstract class Job extends Life {
 	private int xp;
 	private int level;
 	private int cash;
-	private int defense;
+	private int defensePower;
+	private Weapon weapon;
+	private Defense defense;
 
 	public Job(String name, int power, int hp, int mp, int x, int y) {
 		super(name, power, hp, x, y);
 		MAX_MP = this.mp = mp;
 		this.level = 1;
 		this.cash = 10000;
-		this.defense = 100;
+		this.defensePower = 100;
 	}
 
 	public Job(String name, int power, int hp, int mp, int x, int y, int cash, int level, int xp) {
@@ -25,15 +29,15 @@ public abstract class Job extends Life {
 		this.level = level;
 		this.xp = xp;
 		this.cash = cash;
-		this.defense = 100;
+		this.defensePower = 100;
+	}
+	
+	public int getDefensePower() {
+		return defensePower;
 	}
 
-	public int getDefense() {
-		return defense;
-	}
-
-	public void setDefense(int defense) {
-		this.defense = defense;
+	public void setDefensePower(int defensePower) {
+		this.defensePower = defensePower;
 	}
 
 	public int getCash() {
