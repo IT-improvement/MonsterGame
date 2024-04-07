@@ -90,7 +90,7 @@ public class Town extends Map {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 3) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "방어력: " + Game.job.getDefense() + "";
+				result += "\t" + FontStyle.ANSI_RESET + "방어력: " + Game.job.getDefensePower() + "";
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 4) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
