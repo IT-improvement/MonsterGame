@@ -5,8 +5,8 @@ import interfaces.Healable;
 
 public class Healer extends Job implements Healable {
 
-	public Healer() {
-		super("힐러", 0, 70, 1500, 0, 0);
+	public Healer(int cash) {
+		super("힐러", 10, 70, 1500, 0, 0, cash);
 	}
 
 	@Override
