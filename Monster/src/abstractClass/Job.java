@@ -67,7 +67,7 @@ public abstract class Job extends Life {
 	}
 
 	public void setMp(int mp) {
-		this.mp = mp;
+		this.mp += mp;
 	}
 
 	public int getXp() {
