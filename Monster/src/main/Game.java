@@ -190,6 +190,18 @@ public class Game {
 			return 0;
 	}
 
+	private int changeJob(int sel) {
+		if (sel == 1) {
+			
+			return sel;
+		} else if (sel == 2) {
+			return sel;
+		} else if (sel == 3) {
+			return sel;
+		} else
+			return 0;
+	}
+
 	private void bassicAttack() {
 		System.out.println("평타!!");
 		monster.setHp(-job.getPower());
@@ -204,7 +216,7 @@ public class Game {
 	private void inven() {
 		Inven inven = new Inven();
 		int size = inven.size();
-		if(size== 0 ) {
+		if (size == 0) {
 			System.out.println(FontStyle.ANSI_RED + "아이템이 없습니다.");
 			return;
 		}
@@ -341,6 +353,18 @@ public class Game {
 					isRun = false;
 					break;
 				}
+			}
+		} else if (npc.equals(npcList.get(3).getName())) {
+			System.out.println(npcList.get(3));
+			npcList.get(3).printGuideMessage();
+			if (job.getLevel() < 10) {
+				System.out.println(FontStyle.ANSI_RED + "레벨이 부족합니다!" + FontStyle.ANSI_RESET);
+				return;
+			}
+			while (true) {
+				int sel = changeJob(Scan.inputNum("전직메뉴"));
+				if (sel == 0)
+					break;
 			}
 		}
 	}
