@@ -2,11 +2,12 @@ package unit;
 
 import abstractClass.Job;
 import interfaces.Skillable;
+import main.Game;
 
 public class Wizard extends Job implements Skillable {
 
 	public Wizard(int cash) {
-		super("마법사", 20, 100, 100, 0, 0, cash);
+		super("마법사", 20, 100, 100, 0, 0,Game.job.getCash(), Game.job.getLevel(), Game.job.getXp());
 	}
 
 	@Override

@@ -19,10 +19,11 @@ public abstract class Job extends Life {
 		this.defense = 100;
 	}
 
-	public Job(String name, int power, int hp, int mp, int x, int y, int cash) {
+	public Job(String name, int power, int hp, int mp, int x, int y, int cash, int level, int xp) {
 		super(name, power, hp, x, y);
 		MAX_MP = this.mp = mp;
-		this.level = 1;
+		this.level = level;
+		this.xp = xp;
 		this.cash = cash;
 		this.defense = 100;
 	}
