@@ -1,7 +1,7 @@
 package abstractClass;
 
 public abstract class Item {
-	private String name;
+	private String name; // pk
 	private int price;
 	private String img;
 
