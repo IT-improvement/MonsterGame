@@ -26,7 +26,7 @@ public class Healer extends Job implements Healable {
 			return;
 		}
 		user.setHp(20);
-		this.setMp(-10);
+		this.setMp(-useSkill);
 	}
 
 	@Override

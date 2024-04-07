@@ -22,6 +22,7 @@ public class Wizard extends Job implements Skillable {
 			System.err.println("마나가 부족합니다.");
 			return 0;
 		}
+		this.setMp(-useSkill);
 		return 50;
 	}
 
