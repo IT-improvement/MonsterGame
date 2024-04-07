@@ -89,9 +89,15 @@ public abstract class Map {
 			if (i == 0) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "=========================";
 			} else if (i == 1) {
-				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.job.getName();
-				result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				if (Game.job.getName().length() == 3) {
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+					result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.job.getName();
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				} else {
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+					result += "\t" + FontStyle.ANSI_RESET + "직업: " + Game.job.getName();
+					result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
+				}
 			} else if (i == 2) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 				result += "\t" + FontStyle.ANSI_RESET + "공격력: " + Game.job.getPower();
