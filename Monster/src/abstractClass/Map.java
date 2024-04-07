@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import main.FontStyle;
 import main.Game;
+import unit.Begginer;
 
 public abstract class Map {
 	private int height;
@@ -97,16 +98,22 @@ public abstract class Map {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 3) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "방어력: " + Game.job.getDefense()+"";
+				result += "\t" + FontStyle.ANSI_RESET + "방어력: " + Game.job.getDefense() + "";
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 4) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 				result += "\t" + FontStyle.ANSI_RESET + "체력: " + Game.job.getHp() + "/" + Game.job.getMAX_HP();
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 5) {
-				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.job.getMp() + "/" + Game.job.getMAX_MP();
-				result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
+				if (Game.job instanceof Begginer) {
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+					result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.job.getMp() + "/" + Game.job.getMAX_MP();
+					result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
+				} else {
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+					result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.job.getMp() + "/" + Game.job.getMAX_MP();
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				}
 			} else if (i == 6) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 				result += "\t" + FontStyle.ANSI_RESET + "레벨: " + Game.job.getLevel();

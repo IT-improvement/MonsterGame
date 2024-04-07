@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,6 +16,9 @@ import map.SlimeAndGolemForest;
 import map.SlimeForest;
 import map.Town;
 import unit.Begginer;
+import unit.Healer;
+import unit.Warrior;
+import unit.Wizard;
 import user.Inven;
 import user.User;
 import user.UserManager;
@@ -192,11 +196,16 @@ public class Game {
 
 	private int changeJob(int sel) {
 		if (sel == 1) {
-			
+			Wizard wizard = new Wizard();
+			job = wizard;
 			return sel;
 		} else if (sel == 2) {
+			Warrior warrior = new Warrior();
+			job = warrior;
 			return sel;
 		} else if (sel == 3) {
+			Healer healer = new Healer();
+			job = healer;
 			return sel;
 		} else
 			return 0;
@@ -355,12 +364,12 @@ public class Game {
 				}
 			}
 		} else if (npc.equals(npcList.get(3).getName())) {
-			System.out.println(npcList.get(3));
-			npcList.get(3).printGuideMessage();
-			if (job.getLevel() < 10) {
+			if (job.getLevel() <0) {
 				System.out.println(FontStyle.ANSI_RED + "레벨이 부족합니다!" + FontStyle.ANSI_RESET);
 				return;
 			}
+			System.out.println(npcList.get(3));
+			npcList.get(3).printGuideMessage();
 			while (true) {
 				int sel = changeJob(Scan.inputNum("전직메뉴"));
 				if (sel == 0)

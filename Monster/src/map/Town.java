@@ -10,13 +10,14 @@ import npc.Boss;
 import npc.File;
 import npc.Guild;
 import npc.Shop;
+import unit.Begginer;
 
 public class Town extends Map {
 
 	private ArrayList<Npc> npcList;
 
 	public Town() {
-		super(10, 11, FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "마을",FontStyle.ANSI_CYAN);
+		super(10, 11, FontStyle.ANSI_CYAN + FontStyle.ANSI_BOLD + "마을", FontStyle.ANSI_CYAN);
 		npcList = new ArrayList<Npc>();
 		addNpc();
 	}
@@ -83,16 +84,22 @@ public class Town extends Map {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 3) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "방어력: " + Game.job.getDefense()+"";
+				result += "\t" + FontStyle.ANSI_RESET + "방어력: " + Game.job.getDefense() + "";
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 4) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 				result += "\t" + FontStyle.ANSI_RESET + "체력: " + Game.job.getHp() + "/" + Game.job.getMAX_HP();
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 			} else if (i == 5) {
-				result += "\t" + FontStyle.ANSI_PURPLE + "|";
-				result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.job.getMp() + "/" + Game.job.getMAX_MP();
-				result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
+				if (Game.job instanceof Begginer) {
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+					result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.job.getMp() + "/" + Game.job.getMAX_MP();
+					result += "\t" + FontStyle.ANSI_PURPLE + "\t\t|";
+				} else {
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+					result += "\t" + FontStyle.ANSI_RESET + "마나: " + Game.job.getMp() + "/" + Game.job.getMAX_MP();
+					result += "\t" + FontStyle.ANSI_PURPLE + "|";
+				}
 			} else if (i == 6) {
 				result += "\t" + FontStyle.ANSI_PURPLE + "|";
 				result += "\t" + FontStyle.ANSI_RESET + "레벨: " + Game.job.getLevel();
