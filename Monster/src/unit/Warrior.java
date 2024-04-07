@@ -5,9 +5,15 @@ import interfaces.Skillable;
 import main.Game;
 
 public class Warrior extends Job implements Skillable {
+	private int useSkill;
 
 	public Warrior() {
-		super("전사", 30, 200, 30,0,0, Game.job.getCash(), Game.job.getLevel(), Game.job.getXp());
+		super("전사", 30, 200, 30, 0, 0, Game.job.getCash(), Game.job.getLevel(), Game.job.getXp());
+		useSkill = 10;
+	}
+
+	public int getUseSkill() {
+		return useSkill;
 	}
 
 	@Override

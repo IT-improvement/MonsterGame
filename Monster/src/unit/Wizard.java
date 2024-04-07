@@ -5,9 +5,15 @@ import interfaces.Skillable;
 import main.Game;
 
 public class Wizard extends Job implements Skillable {
+	private int useSkill;
 
 	public Wizard() {
-		super("마법사", 20, 100, 100, 0, 0,Game.job.getCash(), Game.job.getLevel(), Game.job.getXp());
+		super("마법사", 20, 100, 100, 0, 0, Game.job.getCash(), Game.job.getLevel(), Game.job.getXp());
+		useSkill = 20;
+	}
+
+	public int getUseSkill() {
+		return useSkill;
 	}
 
 	@Override
