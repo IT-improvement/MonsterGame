@@ -30,8 +30,24 @@ public abstract class Job extends Life {
 		this.xp = xp;
 		this.cash = cash;
 		this.defensePower = 100;
-	}
+	}	
 	
+	public Weapon getWeapon() {
+		return weapon;
+	}
+
+	public void setWeapon(Weapon weapon) {
+		this.weapon = weapon;
+	}
+
+	public Defense getDefense() {
+		return defense;
+	}
+
+	public void setDefense(Defense defense) {
+		this.defense = defense;
+	}
+
 	public int getDefensePower() {
 		return defensePower;
 	}
