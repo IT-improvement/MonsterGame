@@ -6,6 +6,7 @@ import abstractClass.Map;
 import abstractClass.Npc;
 import main.FontStyle;
 import main.Game;
+import npc.Boss;
 import npc.File;
 import npc.Guild;
 import npc.Shop;
@@ -31,6 +32,8 @@ public class Town extends Map {
 		npcList.add(shop);
 		File file = new File();
 		npcList.add(file);
+		Boss boss = new Boss();
+		npcList.add(boss);
 	}
 
 	@Override

@@ -6,7 +6,7 @@ import main.FontStyle;
 public class File extends Npc {
 
 	public File() {
-		super(8, 0, "🧑‍🏫");
+		super(6, 0, "🧑‍💻");
 	}
 
 	@Override

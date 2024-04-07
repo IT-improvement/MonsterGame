@@ -7,7 +7,7 @@ import main.Game;
 public class Shop extends Npc {
 
 	public Shop() {
-		super(5, 0, "🥷");
+		super(4, 0, "🥷");
 	}
 
 	@Override
