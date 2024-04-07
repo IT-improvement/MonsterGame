@@ -32,19 +32,20 @@ public class Inven {
 	@Override
 	public String toString() {
 		String result = "";
-
+		result += "  ㅡ ㅡ ㅡ \r\n" + "/ 인벤토리 \\\n" + "===========\n" + " ";
 		for (int i = 0; i < itemList.size(); i++) {
 			String img = itemList.get(i).getImg();
 			if (index == i) {
-				result += FontStyle.ANSI_PURPLE_BACKGROUND_LIGHT + FontStyle.ANSI_WHITE + img;
+				result += FontStyle.ANSI_PURPLE_BACKGROUND_LIGHT + FontStyle.ANSI_WHITE + img + FontStyle.ANSI_RESET
+						+ " ";
 			} else {
-				result += FontStyle.ANSI_RESET + img;
+				result += FontStyle.ANSI_RESET + img + " ";
 			}
 			if (i % 3 == 2)
-				result += "\n";
+				result += "\n ";
 		}
 
-		result += FontStyle.ANSI_RESET;
+		result += FontStyle.ANSI_RESET + "\n===========\n";
 		return result;
 	}
 }
