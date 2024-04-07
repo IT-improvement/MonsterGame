@@ -2,9 +2,10 @@ package unit;
 
 import abstractClass.Job;
 import interfaces.Healable;
+import interfaces.Skillable;
 import main.Game;
 
-public class Healer extends Job implements Healable {
+public class Healer extends Job implements Healable, Skillable {
 	private int useSkill;
 
 	public Healer() {

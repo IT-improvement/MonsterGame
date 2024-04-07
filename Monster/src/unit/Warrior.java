@@ -25,5 +25,4 @@ public class Warrior extends Job implements Skillable {
 		this.setMp(-useSkill);
 		return 40;
 	}
-
 }
