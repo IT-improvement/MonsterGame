@@ -6,7 +6,7 @@ import main.Game;
 
 public class Healer extends Job implements Healable {
 
-	public Healer(int cash) {
+	public Healer() {
 		super("힐러", 10, 70, 1500, 0, 0, Game.job.getCash(), Game.job.getLevel(), Game.job.getXp());
 	}
 

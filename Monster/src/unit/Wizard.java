@@ -6,7 +6,7 @@ import main.Game;
 
 public class Wizard extends Job implements Skillable {
 
-	public Wizard(int cash) {
+	public Wizard() {
 		super("마법사", 20, 100, 100, 0, 0,Game.job.getCash(), Game.job.getLevel(), Game.job.getXp());
 	}
 
