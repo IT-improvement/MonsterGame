@@ -160,12 +160,14 @@ public class Game {
 
 	private int guild(int sel) {
 		if (sel == 1) {
-			addGuild();
+			createGuild();
 			return sel;
 		} else if (sel == 2)
 			return sel;
-		else if (sel == 3)
+		else if (sel == 3) {
+			addGuild();
 			return sel;
+		}
 		else
 			return 0;
 	}
@@ -215,8 +217,31 @@ public class Game {
 			return 0;
 	}
 
+	private void createGuild() {
+		guildManager = GuildManager.getInstance();
+		if (guildManager.checkUser(user)) {
+			System.out.println(FontStyle.ANSI_RED+ "이미 길드에 가입되어있습니다."+FontStyle.ANSI_RESET);
+			return;
+		}
+		String name = Scan.inputString("길드이름");
+		if (guildManager.checkName(name)) {
+			System.err.println(FontStyle.ANSI_RED+"이미 있는 길드이름입니다."+FontStyle.ANSI_RESET);
+			return;
+		}
+		guildManager.createGuild(name);
+	}
+	
 	private void addGuild() {
-
+		guildManager = GuildManager.getInstance();
+		if (guildManager.checkUser(user)) {
+			System.out.println(FontStyle.ANSI_RED+ "이미 길드에 가입되어있습니다."+FontStyle.ANSI_RESET);
+			return;
+		}
+		String name = Scan.inputString("길드이름");
+		if (!guildManager.checkName(name)) {
+			System.err.println(FontStyle.ANSI_RED+"없는 길드이름입니다."+FontStyle.ANSI_RESET);
+			return;
+		}
 	}
 
 	private void bassicAttack() {
@@ -362,8 +387,10 @@ public class Game {
 		ArrayList<Npc> npcList = town.getNpcList();
 		if (npc.equals(npcList.get(0).getName())) {
 			System.out.println(npcList.get(0));
-			npcList.get(0).printGuideMessage();
 			while (true) {
+				npcList.get(0).printGuideMessage();
+				guildManager = GuildManager.getInstance();
+				System.out.println("길드 수: " + guildManager.size());
 				int sel = guild(Scan.inputNum("길드메뉴"));
 				if (sel == 0)
 					break;

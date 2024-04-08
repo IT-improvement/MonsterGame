@@ -17,7 +17,7 @@ public class Guild extends Npc {
 		result += line + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t1. 길드창설\t" + side + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t2. 길드삭제\t" + side + "\n";
-		result += side + FontStyle.ANSI_CYAN + "\t\t3. 길드원관리\t" + side + "\n";
+		result += side + FontStyle.ANSI_CYAN + "\t\t3. 길드가입\t" + side + "\n";
 		result += side + FontStyle.ANSI_CYAN + "\t\t*. 나가기\t\t" + side + "\n";
 		result += line+"\n";
 		System.out.println(result);
