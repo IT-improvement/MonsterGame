@@ -18,6 +18,7 @@ import unit.Begginer;
 import unit.Healer;
 import unit.Warrior;
 import unit.Wizard;
+import user.GuildManager;
 import user.Inven;
 import user.InvenManager;
 import user.User;
@@ -40,6 +41,7 @@ public class Game {
 
 	private FileManager fileManager;
 	private UserManager userManager;
+	private InvenManager invenManager;
 
 	public Game() {
 		job = new Begginer();
@@ -156,9 +158,10 @@ public class Game {
 	}
 
 	private int guild(int sel) {
-		if (sel == 1)
+		if (sel == 1) {
+			addGuild();
 			return sel;
-		else if (sel == 2)
+		} else if (sel == 2)
 			return sel;
 		else if (sel == 3)
 			return sel;
@@ -211,6 +214,10 @@ public class Game {
 			return 0;
 	}
 
+	private void addGuild() {
+
+	}
+
 	private void bassicAttack() {
 		System.out.println("평타!!");
 		monster.setHp(-job.getPower());
@@ -236,7 +243,7 @@ public class Game {
 			System.out.println("size: " + inven.size());
 			String dir = Scan.inputString("입력");
 			if (dir.equals("q")) {
-				InvenManager invenManager = InvenManager.getInstance();
+				invenManager = InvenManager.getInstance();
 				invenManager.setEquipment(inven.getIndex());
 				inven.setIndex(0);
 				if (inven.size() == 0) {
