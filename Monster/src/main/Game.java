@@ -1,6 +1,5 @@
 package main;
 
-import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
