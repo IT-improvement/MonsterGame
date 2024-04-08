@@ -21,6 +21,7 @@ public class GuildManager {
 		return instance;
 	}
 
+	/* C(insert) */
 	public void createGuild(String guildName) {
 		ArrayList<User> userList = new ArrayList<>();
 		userList.add(Game.user);
@@ -28,6 +29,13 @@ public class GuildManager {
 		System.out.println("여기");
 	}
 
+	public void addGuild(String guildName) {
+		ArrayList<User> userList = guildList.get(guildName);
+		userList.add(Game.user);
+		guildList.replace(guildName, userList);
+	}
+
+	/* R(select) */
 	public int size() {
 		return guildList.size();
 	}

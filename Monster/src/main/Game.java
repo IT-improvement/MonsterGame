@@ -242,6 +242,7 @@ public class Game {
 			System.err.println(FontStyle.ANSI_RED+"없는 길드이름입니다."+FontStyle.ANSI_RESET);
 			return;
 		}
+		guildManager.addGuild(name);
 	}
 
 	private void bassicAttack() {
