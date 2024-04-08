@@ -9,12 +9,20 @@ import main.Game;
 
 public class Inven {
 
-	private ArrayList<Item> itemList;
+	private static ArrayList<Item> itemList;
 	private int index;
 
 	public Inven() {
 		ItemManager itemManager = ItemManager.getInstance();
 		itemList = itemManager.get(Game.user);
+	}
+	
+	public static ArrayList<Item> getItemList() {
+		return itemList;
+	}
+
+	public static void setItemList(ArrayList<Item> itemList) {
+		Inven.itemList = itemList;
 	}
 
 	public int getIndex() {
@@ -27,6 +35,10 @@ public class Inven {
 
 	public int size() {
 		return itemList == null ? 0 : itemList.size();
+	}
+
+	public Item getItem() {
+		return itemList.get(index);
 	}
 
 	@Override
