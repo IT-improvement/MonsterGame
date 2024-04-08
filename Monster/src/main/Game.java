@@ -41,6 +41,7 @@ public class Game {
 
 	private FileManager fileManager;
 	private UserManager userManager;
+	private GuildManager guildManager;
 	private InvenManager invenManager;
 
 	public Game() {
