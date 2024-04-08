@@ -68,4 +68,61 @@ public class GuildManager {
 		}
 		return false;
 	}
+
+	/* U(update) */
+
+	/* D(delete) */
+	public void deleteGuild() {
+		boolean checkLeader = checkLeader();
+		if (checkLeader) {
+			Set keySet = guildList.keySet();
+			Iterator<String> keys = keySet.iterator();
+			while (keys.hasNext()) {
+				String key = keys.next();
+				ArrayList<User> userList = guildList.get(key);
+				for (int i = 0; i < userList.size(); i++) {
+					User target = userList.get(i);
+					if (target.getId().equals(Game.user.getId())) {
+						guildList.remove(key);
+						return;
+					}
+				}
+			}
+		} else {
+			Set keySet = guildList.keySet();
+			Iterator<String> keys = keySet.iterator();
+			while (keys.hasNext()) {
+				String key = keys.next();
+				ArrayList<User> userList = guildList.get(key);
+				for (int i = 0; i < userList.size(); i++) {
+					User target = userList.get(i);
+					if (target.getId().equals(Game.user.getId())) {
+						userList.remove(i);
+						guildList.replace(key, userList);
+						return;
+					}
+				}
+			}
+		}
+	}
+
+	private boolean checkLeader() {
+		Set keySet = guildList.keySet();
+		Iterator<String> keys = keySet.iterator();
+		int index = -1;
+		while (keys.hasNext()) {
+			String key = keys.next();
+			ArrayList<User> userList = guildList.get(key);
+			for (int i = 0; i < userList.size(); i++) {
+				User target = userList.get(i);
+				if (target.getId().equals(Game.user.getId())) {
+					index = i;
+				}
+			}
+		}
+		if (index == 0)
+			return true;
+		else
+			return false;
+	}
 }
