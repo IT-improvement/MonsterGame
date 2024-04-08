@@ -37,8 +37,8 @@ public class Inven {
 		return itemList == null ? 0 : itemList.size();
 	}
 
-	public Item getItem() {
-		return itemList.get(index);
+	public Item getItem(int idx) {
+		return itemList.get(idx);
 	}
 
 	@Override

@@ -20,6 +20,7 @@ import unit.Healer;
 import unit.Warrior;
 import unit.Wizard;
 import user.Inven;
+import user.InvenManager;
 import user.User;
 import user.UserManager;
 
@@ -224,14 +225,31 @@ public class Game {
 
 	private void inven() {
 		Inven inven = new Inven();
-		int size = inven.size();
-		if (size == 0) {
-			System.out.println(FontStyle.ANSI_RED + "아이템이 없습니다.");
-			return;
-		}
+		int size = 0;
 		while (true) {
+			size = inven.size();
+			if (size == 0) {
+				System.out.println(FontStyle.ANSI_RED + "아이템이 없습니다.");
+				return;
+			}
 			System.out.println(inven);
-			int index = moveInven(inven.getIndex(), Scan.inputString("입력"), size);
+			System.out.println("index: " + inven.getIndex());
+			System.out.println("size: " + inven.size());
+			String dir = Scan.inputString("입력");
+			if (dir.equals("q")) {
+				InvenManager invenManager = InvenManager.getInstance();
+				invenManager.setEquipment(inven.getIndex());
+				inven.setIndex(0);
+				if (inven.size() == 0) {
+					return;
+				}
+				continue;
+			}
+
+			if (size == 0)
+				return;
+
+			int index = moveInven(inven.getIndex(), dir, size);
 			if (index == -1)
 				break;
 			inven.setIndex(index);
@@ -364,7 +382,7 @@ public class Game {
 				}
 			}
 		} else if (npc.equals(npcList.get(3).getName())) {
-			if (job.getLevel() <0) {
+			if (job.getLevel() < 0) {
 				System.out.println(FontStyle.ANSI_RED + "레벨이 부족합니다!" + FontStyle.ANSI_RESET);
 				return;
 			}

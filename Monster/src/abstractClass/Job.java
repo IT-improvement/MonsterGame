@@ -3,6 +3,7 @@ package abstractClass;
 import item.Defense;
 import item.Weapon;
 import main.FontStyle;
+import main.Game;
 
 public abstract class Job extends Life {
 
@@ -37,7 +38,10 @@ public abstract class Job extends Life {
 	}
 
 	public void setWeapon(Item item) {
-		this.weapon = (Weapon) item;
+		Weapon wp = (Weapon) item;
+		this.weapon = wp;
+		int power = wp.getPower();
+		this.setPower(Game.job.getPower() + power);
 	}
 
 	public Defense getDefense() {
@@ -45,7 +49,10 @@ public abstract class Job extends Life {
 	}
 
 	public void setDefense(Item item) {
-		this.defense = (Defense) item;
+		Defense df = (Defense) item;
+		this.defense = df;
+		int defensePower = df.getDefense();
+		this.setDefensePower(Game.job.getDefensePower() + defensePower);
 	}
 
 	public int getDefensePower() {
