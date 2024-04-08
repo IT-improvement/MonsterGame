@@ -46,6 +46,18 @@ public class Inven {
 		}
 
 		result += FontStyle.ANSI_RESET + "\n===========\n";
+		result += "무기: ";
+		if (Game.job.getWeapon() == null)
+			result += "없음\n";
+		else
+			result += Game.job.getWeapon().getName() + "\n";
+		result += "방어구: ";
+		if (Game.job.getDefense() == null)
+			result += "없음\n";
+		else
+			result += Game.job.getDefense().getName() + "\n";
+		result += "반지: ";
+		result += "없음\n";
 		return result;
 	}
 }
