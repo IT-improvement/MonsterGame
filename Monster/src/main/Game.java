@@ -219,6 +219,9 @@ public class Game {
 	private void firstSkill() {
 		System.out.println("스킬~");
 		int damage = job.skill();
+		if(damage==0) {
+			return;
+		}
 		monster.setHp(-damage);
 	}
 
