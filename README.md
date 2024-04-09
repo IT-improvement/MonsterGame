@@ -83,6 +83,7 @@
      │     ├── Life.java
      │     ├── Npc.java
      │     ├── Monster.java
+     │     ├── Npc.java
      │     └── Map.java
      │
      ├── unit
@@ -97,22 +98,32 @@
      │   
      ├── map
      │     ├── SlimeAndGolemForest.java
+     │     ├── SlimeForest.java
+     │     ├── GolemForest.java
      │     └── Town.java
      │   
      ├── user
+     │     ├── GuildManager.java
+     │     ├── Inven.java
+     │     ├── InvenManager.java
      │     ├── User.java
      │     └── UserManager.java
      │   
-     ├── item
-     │     ├── Item.java
-     │     ├── Weapon.java
-     │     └── ItemManager.java
-     │
-     └── file
-           ├── Golem.png
-           ├── Slime.png
-           ├── map.png
-           └── monster.png
+     ├── file
+     │     └── FileManager.java
+     │   
+     ├── npc
+     │     ├── Boss.java
+     │     ├── Guild.java
+     │     ├── Shop.java
+     │     └── File.java
+     │   
+     └── item
+           ├── Item.java
+           ├── Weapon.java
+           ├── Defense.java
+           └── ItemManager.java
+
 ```
 <br>
 
