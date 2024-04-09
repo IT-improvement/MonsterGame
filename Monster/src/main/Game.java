@@ -397,11 +397,10 @@ public class Game {
 		Town town = new Town();
 		ArrayList<Npc> npcList = town.getNpcList();
 		if (npc.equals(npcList.get(0).getName())) {
-			System.out.println(npcList.get(0));
 			while (true) {
+				System.out.println(npcList.get(0));
 				npcList.get(0).printGuideMessage();
 				guildManager = GuildManager.getInstance();
-				System.out.println("길드 수: " + guildManager.size());
 				int sel = guild(Scan.inputNum("길드메뉴"));
 				if (sel == 0)
 					break;
