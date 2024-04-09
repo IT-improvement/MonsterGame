@@ -125,9 +125,9 @@
 
 ### 게임 방법
 
-|이동방향|상(위)|좌(왼쪽)|하(아래)|우(오른쪽)|인벤토리|
-|---|---|---|---|---|---|
-|키보드| W | A | S | D | R |
+|이동방향|상(위)|좌(왼쪽)|하(아래)|우(오른쪽)|인벤토리|아이템 착용|
+|---|---|---|---|---|---|---|
+|키보드| W | A | S | D | R | Q |
 
 
 ### 게임 시작
@@ -145,7 +145,7 @@
 ### NPC 종류
 |길드|상점|파일|
 |---|---|---|
-|<img src="">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Shop.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/file.png">| 
+|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/gulid.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Shop.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/file.png">| 
 
 - 영상
 <div align=center>
