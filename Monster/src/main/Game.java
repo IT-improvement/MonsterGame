@@ -262,7 +262,7 @@ public class Game {
 	private void firstSkill() {
 		System.out.println("스킬~");
 		int damage = job.skill();
-		if(damage==0) {
+		if (damage == 0) {
 			return;
 		}
 		monster.setHp(-damage);
@@ -278,8 +278,6 @@ public class Game {
 				return;
 			}
 			System.out.println(inven);
-			System.out.println("index: " + inven.getIndex());
-			System.out.println("size: " + inven.size());
 			String dir = Scan.inputString("입력");
 			if (dir.equals("q")) {
 				invenManager = InvenManager.getInstance();
@@ -433,7 +431,7 @@ public class Game {
 				System.out.println(FontStyle.ANSI_RED + "레벨이 부족합니다!" + FontStyle.ANSI_RESET);
 				return;
 			}
-			if(!(job instanceof Begginer)) {
+			if (!(job instanceof Begginer)) {
 				System.out.println(FontStyle.ANSI_RED + "이미 전직했습니다." + FontStyle.ANSI_RESET);
 			}
 			System.out.println(npcList.get(3));
@@ -541,7 +539,7 @@ public class Game {
 	private void monsterAttack() {
 		int power = job.getPower();
 		int defense = job.getDefensePower() - 100;
-		power*=1 - defense*0.01;
+		power *= 1 - defense * 0.01;
 		job.setHp(-power);
 	}
 }
