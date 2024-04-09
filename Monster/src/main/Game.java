@@ -429,9 +429,12 @@ public class Game {
 				}
 			}
 		} else if (npc.equals(npcList.get(3).getName())) {
-			if (job.getLevel() < 0) {
+			if (job.getLevel() < 10) {
 				System.out.println(FontStyle.ANSI_RED + "레벨이 부족합니다!" + FontStyle.ANSI_RESET);
 				return;
+			}
+			if(!(job instanceof Begginer)) {
+				System.out.println(FontStyle.ANSI_RED + "이미 전직했습니다." + FontStyle.ANSI_RESET);
 			}
 			System.out.println(npcList.get(3));
 			npcList.get(3).printGuideMessage();
