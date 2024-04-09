@@ -145,7 +145,7 @@
 ### NPC 종류
 |길드|상점|파일|
 |---|---|---|
-|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Gulid.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Shop.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/file.png">| 
+|<img src="">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/Shop.png">|<img src="https://github.com/IT-improvement/MonsterGame/blob/master/Monster/src/imageFile/file.png">| 
 
 - 영상
 <div align=center>
