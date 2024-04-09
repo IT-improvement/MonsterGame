@@ -9,12 +9,20 @@ import main.Game;
 
 public class Inven {
 
-	private ArrayList<Item> itemList;
+	private static ArrayList<Item> itemList;
 	private int index;
 
 	public Inven() {
 		ItemManager itemManager = ItemManager.getInstance();
 		itemList = itemManager.get(Game.user);
+	}
+	
+	public static ArrayList<Item> getItemList() {
+		return itemList;
+	}
+
+	public static void setItemList(ArrayList<Item> itemList) {
+		Inven.itemList = itemList;
 	}
 
 	public int getIndex() {
@@ -27,6 +35,10 @@ public class Inven {
 
 	public int size() {
 		return itemList == null ? 0 : itemList.size();
+	}
+
+	public Item getItem(int idx) {
+		return itemList.get(idx);
 	}
 
 	@Override
@@ -58,6 +70,18 @@ public class Inven {
 		result += "없음\n";
 
 		result += FontStyle.ANSI_RESET + "\n===========\n";
+		result += "무기: ";
+		if (Game.job.getWeapon() == null)
+			result += "없음\n";
+		else
+			result += Game.job.getWeapon().getName() + "\n";
+		result += "방어구: ";
+		if (Game.job.getDefense() == null)
+			result += "없음\n";
+		else
+			result += Game.job.getDefense().getName() + "\n";
+		result += "반지: ";
+		result += "없음\n";
 		return result;
 	}
 }

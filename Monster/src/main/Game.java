@@ -1,6 +1,5 @@
 package main;
 
-import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,7 +18,9 @@ import unit.Begginer;
 import unit.Healer;
 import unit.Warrior;
 import unit.Wizard;
+import user.GuildManager;
 import user.Inven;
+import user.InvenManager;
 import user.User;
 import user.UserManager;
 
@@ -40,6 +41,8 @@ public class Game {
 
 	private FileManager fileManager;
 	private UserManager userManager;
+	private GuildManager guildManager;
+	private InvenManager invenManager;
 
 	public Game() {
 		job = new Begginer();
@@ -156,13 +159,16 @@ public class Game {
 	}
 
 	private int guild(int sel) {
-		if (sel == 1)
+		if (sel == 1) {
+			createGuild();
 			return sel;
-		else if (sel == 2)
+		} else if (sel == 2) {
+			deleteGuild();
 			return sel;
-		else if (sel == 3)
+		} else if (sel == 3) {
+			addGuild();
 			return sel;
-		else
+		} else
 			return 0;
 	}
 
@@ -211,6 +217,43 @@ public class Game {
 			return 0;
 	}
 
+	private void deleteGuild() {
+		guildManager = GuildManager.getInstance();
+		if (!guildManager.checkUser(user)) {
+			System.out.println(FontStyle.ANSI_RED + "길드에 가입되어 있지 않습니다." + FontStyle.ANSI_RESET);
+			return;
+		}
+		guildManager.deleteGuild();
+	}
+
+	private void createGuild() {
+		guildManager = GuildManager.getInstance();
+		if (guildManager.checkUser(user)) {
+			System.out.println(FontStyle.ANSI_RED + "이미 길드에 가입되어있습니다." + FontStyle.ANSI_RESET);
+			return;
+		}
+		String name = Scan.inputString("길드이름");
+		if (guildManager.checkName(name)) {
+			System.err.println(FontStyle.ANSI_RED + "이미 있는 길드이름입니다." + FontStyle.ANSI_RESET);
+			return;
+		}
+		guildManager.createGuild(name);
+	}
+
+	private void addGuild() {
+		guildManager = GuildManager.getInstance();
+		if (guildManager.checkUser(user)) {
+			System.out.println(FontStyle.ANSI_RED + "이미 길드에 가입되어있습니다." + FontStyle.ANSI_RESET);
+			return;
+		}
+		String name = Scan.inputString("길드이름");
+		if (!guildManager.checkName(name)) {
+			System.err.println(FontStyle.ANSI_RED + "없는 길드이름입니다." + FontStyle.ANSI_RESET);
+			return;
+		}
+		guildManager.addGuild(name);
+	}
+
 	private void bassicAttack() {
 		System.out.println("평타!!");
 		monster.setHp(-job.getPower());
@@ -227,14 +270,31 @@ public class Game {
 
 	private void inven() {
 		Inven inven = new Inven();
-		int size = inven.size();
-		if (size == 0) {
-			System.out.println(FontStyle.ANSI_RED + "아이템이 없습니다.");
-			return;
-		}
+		int size = 0;
 		while (true) {
+			size = inven.size();
+			if (size == 0) {
+				System.out.println(FontStyle.ANSI_RED + "아이템이 없습니다.");
+				return;
+			}
 			System.out.println(inven);
-			int index = moveInven(inven.getIndex(), Scan.inputString("입력"), size);
+			System.out.println("index: " + inven.getIndex());
+			System.out.println("size: " + inven.size());
+			String dir = Scan.inputString("입력");
+			if (dir.equals("q")) {
+				invenManager = InvenManager.getInstance();
+				invenManager.setEquipment(inven.getIndex());
+				inven.setIndex(0);
+				if (inven.size() == 0) {
+					return;
+				}
+				continue;
+			}
+
+			if (size == 0)
+				return;
+
+			int index = moveInven(inven.getIndex(), dir, size);
 			if (index == -1)
 				break;
 			inven.setIndex(index);
@@ -340,8 +400,10 @@ public class Game {
 		ArrayList<Npc> npcList = town.getNpcList();
 		if (npc.equals(npcList.get(0).getName())) {
 			System.out.println(npcList.get(0));
-			npcList.get(0).printGuideMessage();
 			while (true) {
+				npcList.get(0).printGuideMessage();
+				guildManager = GuildManager.getInstance();
+				System.out.println("길드 수: " + guildManager.size());
 				int sel = guild(Scan.inputNum("길드메뉴"));
 				if (sel == 0)
 					break;
@@ -367,7 +429,7 @@ public class Game {
 				}
 			}
 		} else if (npc.equals(npcList.get(3).getName())) {
-			if (job.getLevel() <0) {
+			if (job.getLevel() < 0) {
 				System.out.println(FontStyle.ANSI_RED + "레벨이 부족합니다!" + FontStyle.ANSI_RESET);
 				return;
 			}
