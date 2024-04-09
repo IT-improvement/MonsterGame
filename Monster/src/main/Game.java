@@ -539,6 +539,9 @@ public class Game {
 	}
 
 	private void monsterAttack() {
-		job.setHp(-monster.getPower());
+		int power = job.getPower();
+		int defense = job.getDefensePower() - 100;
+		power*=1 - defense*0.01;
+		job.setHp(-power);
 	}
 }
